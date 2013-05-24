@@ -8,6 +8,8 @@ import org.junit.Test;
 public class JogoTest {
 
 	private Jogo jogo;
+	
+	//Teste
 
 	@Before
 	public void criarJogo() {
