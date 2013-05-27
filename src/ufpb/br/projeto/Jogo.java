@@ -22,11 +22,7 @@ public class Jogo {
 		this.definirPersonagemX = b;
 	}
 
-	public void lancarDado() {
-
-	}
-
-	public int getDado() {
+	public int lancarDado() {
 		return 1;
 	}
 

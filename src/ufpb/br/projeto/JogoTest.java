@@ -46,9 +46,8 @@ public class JogoTest {
 	@Test
 	public void jogarDado() {
 		jogo.setPersonagemX(true);
-		jogo.lancarDado();// Não está fazendo nada
 		assertTrue("espera-se um numero > 0 e < 7",
-				jogo.getDado() > 0 && jogo.getDado() < 7);
+				jogo.lancarDado() > 0 && jogo.lancarDado() < 7);
 
 	}
 	
