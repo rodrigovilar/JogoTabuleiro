@@ -44,6 +44,13 @@ public class JogoTest {
 	}
 
 	@Test
+	public void scoreZero(){
+		// Testa se o score inicializou zerado
+		jogo.setPersonagemX(true);
+		assertEquals(jogo.getScore(),0);
+	}
+	
+	@Test
 	public void jogarDado() {
 		jogo.setPersonagemX(true);
 		assertTrue("espera-se um numero > 0 e < 7",
@@ -51,5 +58,5 @@ public class JogoTest {
 
 	}
 	
-
+	
 }

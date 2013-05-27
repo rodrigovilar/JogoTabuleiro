@@ -26,4 +26,8 @@ public class Jogo {
 		return 1;
 	}
 
+	public int getScore() {
+		return 0;
+	}
+
 }
