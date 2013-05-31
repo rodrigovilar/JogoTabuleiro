@@ -128,4 +128,14 @@ public class JogoFacadeTest {
 		jogo.isRespostaPersonagemX();
 		assertEquals(jogo.getScore(), 1);
 	}
+
+	// teste 14
+	@Test
+	public void verificarScoreAposErro() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "b");
+		jogo.isRespostaPersonagemX();
+		assertEquals(jogo.getScore(), 0);
+	}
 }
