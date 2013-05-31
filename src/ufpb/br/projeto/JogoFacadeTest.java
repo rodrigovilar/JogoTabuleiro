@@ -47,6 +47,10 @@ public class JogoFacadeTest {
 
 	}
 
-	
+	// teste 5
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void jogarDadoAntesDeDefinirPersonagem() {
+		jogo.lancarDado();
+	}
 
 }
