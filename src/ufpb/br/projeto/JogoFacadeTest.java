@@ -53,4 +53,11 @@ public class JogoFacadeTest {
 		jogo.lancarDado();
 	}
 
+	// teste 6
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void moverPersonagemPosicaoIrregular() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.moverPersonagemX(-1);
+	}
+
 }
