@@ -94,5 +94,19 @@ public class JogoFacadeTest {
 				jogo.isRespostaPersonagemX());
 
 	}
+	
+
+	// teste 11
+	@Test
+	public void verificarPosicaoAposAcerto() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+		assertTrue("Espera-se que o personagem esteja na posicao 1",
+				jogo.getPosicaoPersonagem() == 1);
+
+	}
+	
 
 }
