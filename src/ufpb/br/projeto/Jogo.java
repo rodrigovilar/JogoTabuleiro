@@ -45,7 +45,7 @@ public class Jogo {
 		}
 		
 		if (!definirPersonagemX) {
-			throw new ExcecaoJogoTabuleiro("Personagem não foi definido!");
+			throw new ExcecaoJogoTabuleiro(" O Personagem não foi definido!");
 		}
 
 		iniciouJogo = true;
