@@ -75,4 +75,13 @@ public class JogoFacadeTest {
 		assertTrue(jogo.getPosicaoPersonagem() == 0);
 	}
 
+	// teste 9
+	@Test
+	public void jogarDado() {
+		jogo.setEscolhaPersonagemX(true);
+		assertTrue("espera-se um numero > 0 e < 7", jogo.lancarDado() > 0
+				&& jogo.lancarDado() < 7);
+
+	}
+
 }
