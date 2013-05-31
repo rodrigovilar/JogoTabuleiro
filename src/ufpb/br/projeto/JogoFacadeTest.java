@@ -84,4 +84,15 @@ public class JogoFacadeTest {
 
 	}
 
+	// teste 10
+	@Test
+	public void verificarRespostaPersonagemX() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		assertTrue("Espera-se que o personagem responda correto o desafio",
+				jogo.isRespostaPersonagemX());
+
+	}
+
 }
