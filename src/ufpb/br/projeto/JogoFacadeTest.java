@@ -60,4 +60,19 @@ public class JogoFacadeTest {
 		jogo.moverPersonagemX(-1);
 	}
 
+	// teste 7
+	@Test
+	public void scoreZero() {
+		// Testa se o score inicializou zerado
+		jogo.setEscolhaPersonagemX(true);
+		assertEquals(jogo.getScore(), 0);
+	}
+
+	// teste 8
+	@Test
+	public void verificarPosicaoInicialPersonagemX() {
+		jogo.setEscolhaPersonagemX(true);
+		assertTrue(jogo.getPosicaoPersonagem() == 0);
+	}
+
 }
