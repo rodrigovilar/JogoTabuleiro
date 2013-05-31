@@ -138,4 +138,26 @@ public class JogoFacadeTest {
 		jogo.isRespostaPersonagemX();
 		assertEquals(jogo.getScore(), 0);
 	}
+
+	// teste 15
+	@Test
+	public void jogoGanho() {
+
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "b", "b");
+		jogo.isRespostaPersonagemX();
+
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "c", "c");
+		jogo.isRespostaPersonagemX();
+
+		assertTrue("Espera-se que o personagem X tenha ganhado o jogo",
+				jogo.acabou());
+	}
+
 }
