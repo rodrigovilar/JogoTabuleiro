@@ -160,4 +160,25 @@ public class JogoFacadeTest {
 				jogo.acabou());
 	}
 
+	// teste 16
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void lancarDadoAposJogoGanho() {
+
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "b", "b");
+		jogo.isRespostaPersonagemX();
+
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "c", "c");
+		jogo.isRespostaPersonagemX();
+
+		jogo.lancarDado();
+
+	}
+
 }
