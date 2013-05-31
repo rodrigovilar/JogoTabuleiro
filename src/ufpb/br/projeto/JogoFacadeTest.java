@@ -118,4 +118,14 @@ public class JogoFacadeTest {
 				jogo.getPosicaoPersonagem() == 0);
 
 	}
+
+	// teste 13
+	@Test
+	public void verificarScoreAposAcerto() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+		assertEquals(jogo.getScore(), 1);
+	}
 }
