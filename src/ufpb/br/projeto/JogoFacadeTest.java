@@ -26,7 +26,6 @@ public class JogoFacadeTest {
 		jogo.setEscolhaPersonagemX(true);
 		assertTrue("Esperava que o primeiro personagem fosse X",
 				jogo.isEscolhaPersonagemX());
-
 	}
 
 	// teste 3
@@ -44,7 +43,6 @@ public class JogoFacadeTest {
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
 		jogo.setEscolhaPersonagemX(false);
-
 	}
 
 	// teste 5
@@ -178,7 +176,5 @@ public class JogoFacadeTest {
 		jogo.isRespostaPersonagemX();
 
 		jogo.lancarDado();
-
 	}
-
 }

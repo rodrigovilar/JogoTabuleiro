@@ -22,7 +22,6 @@ public class Jogo {
 		if (getPosicaoPersonagem() == 3) {
 			return true;
 		}
-
 		return false;
 	}
 
