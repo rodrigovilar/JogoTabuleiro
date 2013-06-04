@@ -124,7 +124,7 @@ public class JogoFacadeTest {
 		jogo.lancarDado();
 		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
 		jogo.isRespostaPersonagemX();
-		assertEquals(jogo.getScore(), 1);
+		assertEquals(3,jogo.getScore());
 	}
 
 	// teste 14
@@ -134,10 +134,24 @@ public class JogoFacadeTest {
 		jogo.lancarDado();
 		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "b");
 		jogo.isRespostaPersonagemX();
-		assertEquals(jogo.getScore(), 0);
+		assertEquals(0,jogo.getScore());
 	}
 
 	// teste 15
+	@Test
+	public void verificarScoreAposAcertoeAposErro() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "b");
+		jogo.isRespostaPersonagemX();
+		assertEquals(2,jogo.getScore());
+	}
+
+	// teste 16
 	@Test
 	public void jogoGanho() {
 
@@ -158,7 +172,7 @@ public class JogoFacadeTest {
 				jogo.acabou());
 	}
 
-	// teste 16
+	// teste 17
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void lancarDadoAposJogoGanho() {
 

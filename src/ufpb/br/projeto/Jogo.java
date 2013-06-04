@@ -58,12 +58,25 @@ public class Jogo {
 		if (resposta.equals(gabarito)) {
 			resultado = true;
 			posicaoPersonagem += valorDado;
-			score += 1;
+			//score += 3; // Acertar uma respota add 3
 
 		} else {
 			resultado = false;
+			//score -= 1; // Errar uma resposta sub 1
 		}
+		adicionarPontuacao(resultado);
 		return resultado;
+	}
+	
+	@SuppressWarnings("unused")
+	private void adicionarPontuacao(boolean resultado){
+		if(resultado==true)
+			score += 3;
+		if (score!=0 && resultado==false){
+			score -= 1;
+		}
+		if(score==0 && resultado==false)
+			return;
 	}
 
 	public boolean isRespostaPersonagemX() {
