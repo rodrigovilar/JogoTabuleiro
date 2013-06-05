@@ -214,13 +214,24 @@ public class JogoFacadeTest {
 	
 	//teste 20
 	@Test
-	public void supresaBoa(){
+	public void surpresaBoa(){
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
 		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
 		jogo.isRespostaPersonagemX();
 		jogo.setSurpresa(true);
 		assertTrue("Espera-se que casa contenha uma surpresa boa",(jogo.surpresa(2)));
+	}
+	//teste 21 
+	
+	@Test
+	public void surpresaRuim(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+		jogo.setSurpresa(true);
+		assertFalse("Espera-se que casa contenha uma surpresa ruim",(jogo.surpresa(0)));
 	}
 	
 	
