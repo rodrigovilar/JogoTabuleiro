@@ -118,26 +118,34 @@ public class JogoFacadeTest {
 	}
 
 	// teste 13
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void verificarValorIrregularScore() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.setScore(-1);
+
+	}
+
+	// teste 14
 	@Test
 	public void verificarScoreAposAcerto() {
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
 		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
 		jogo.isRespostaPersonagemX();
-		assertEquals(3,jogo.getScore());
+		assertEquals(3, jogo.getScore());
 	}
 
-	// teste 14
+	// teste 15
 	@Test
 	public void verificarScoreAposErro() {
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
 		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "b");
 		jogo.isRespostaPersonagemX();
-		assertEquals(0,jogo.getScore());
+		assertEquals(0, jogo.getScore());
 	}
 
-	// teste 15
+	// teste 16
 	@Test
 	public void verificarScoreAposAcertoeAposErro() {
 		jogo.setEscolhaPersonagemX(true);
@@ -148,10 +156,10 @@ public class JogoFacadeTest {
 		jogo.lancarDado();
 		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "b");
 		jogo.isRespostaPersonagemX();
-		assertEquals(2,jogo.getScore());
+		assertEquals(2, jogo.getScore());
 	}
 
-	// teste 16
+	// teste 17
 	@Test
 	public void jogoGanho() {
 
@@ -172,7 +180,7 @@ public class JogoFacadeTest {
 				jogo.acabou());
 	}
 
-	// teste 17
+	// teste 18
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void lancarDadoAposJogoGanho() {
 
