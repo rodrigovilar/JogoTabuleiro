@@ -17,6 +17,7 @@ public class Jogo {
 	private int score;
 	private boolean iniciouJogo = false;
 	private boolean definirPersonagemX;
+	private boolean contemSurpresa = false;
 
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
@@ -110,8 +111,28 @@ public class Jogo {
 
 	}
 
-	public boolean isSurpresa() {
-		return true;
+	public boolean surpresa(int valorSurpresa) {
+		boolean saida;
+		
+		if(valorSurpresa > 0){
+			saida = true;
+		}
+		else{
+			saida = false;
+		}
+		contemSurpresa = true;
+		return saida;
 	}
+	
+	public boolean isSurpresa(){
+		return contemSurpresa;
+	}
+	
+	public void setSurpresa(boolean surpresa){
+		this.contemSurpresa = surpresa;
+		
+		
+	}
+	
 
 }
