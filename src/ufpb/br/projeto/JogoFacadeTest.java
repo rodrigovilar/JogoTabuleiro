@@ -207,11 +207,22 @@ public class JogoFacadeTest {
 		jogo.lancarDado();
 		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
 		jogo.isRespostaPersonagemX();
+		jogo.setSurpresa(true);
 		assertTrue("Espera-se que casa contenha uma surpresa", jogo.isSurpresa());
 		
 	}
 	
-
+	//teste 20
+	@Test
+	public void supresaBoa(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+		jogo.setSurpresa(true);
+		assertTrue("Espera-se que casa contenha uma surpresa boa",(jogo.surpresa(2)));
+	}
+	
 	
 	
 	
