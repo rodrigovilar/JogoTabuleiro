@@ -199,4 +199,33 @@ public class JogoFacadeTest {
 
 		jogo.lancarDado();
 	}
+	
+	//teste 19
+	@Test
+	public void verificarCasaSurpresa(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.desafio("questao", new String[] { "a", "b", "c" }, "a", "a");
+		jogo.isRespostaPersonagemX();
+		assertTrue("Espera-se que casa contenha uma surpresa", jogo.isSurpresa());
+		
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

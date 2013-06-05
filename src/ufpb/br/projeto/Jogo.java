@@ -110,4 +110,8 @@ public class Jogo {
 
 	}
 
+	public boolean isSurpresa() {
+		return true;
+	}
+
 }
