@@ -1,16 +1,14 @@
 package ufpb.br.projeto;
 
-import java.util.List;
-
 /**
- * Essa classe agregarar inderetamente todas as outras entidades
+ * Essa classe sera a fachada do jogo.
  * 
  * @author jonathas Firmo
  * 
  */
 public class Jogo {
 
-	private String tabuleiro[] = new String[] { null, null, null, null};
+	private String tabuleiro[] = new String[] { null, null, null, null };
 	private int posicaoPersonagem;
 	private int valorDado;
 	private boolean resultado;
@@ -18,6 +16,13 @@ public class Jogo {
 	private boolean iniciouJogo = false;
 	private boolean definirPersonagemX;
 	private boolean contemSurpresa = false;
+
+	/**
+	 * Esse metodo informar quando o jogo termina.
+	 * 
+	 * @return true caso tenha terminado e false caso contrario.
+	 * 
+	 */
 
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
@@ -38,12 +43,17 @@ public class Jogo {
 		this.definirPersonagemX = b;
 	}
 
+	/**
+	 * Esse metodo faz o lançamento do dado.
+	 * 
+	 * @return retorna um valor inteiro gerado pelo dado.
+	 */
 	public int lancarDado() {
 
-		if(acabou()){
+		if (acabou()) {
 			throw new ExcecaoJogoTabuleiro("O jogo já foi acabado!");
 		}
-		
+
 		if (!definirPersonagemX) {
 			throw new ExcecaoJogoTabuleiro(" O Personagem não foi definido!");
 		}
@@ -53,35 +63,54 @@ public class Jogo {
 
 	}
 
+	/**
+	 * Esse metodo propoe um desafio ao personagem.
+	 * 
+	 * @param questao
+	 *            propoe uma pergunta ao personagem.
+	 * @param alternativas
+	 *            possui uma lista de alternativa para escolha do personagem.
+	 * @param gabarito
+	 *            contem a alternativa correta da pergunta.
+	 * @param resposta
+	 *            é a alternativa escolhida pelo personagem.
+	 * @return
+	 */
 	public boolean desafio(String questao, String alternativas[],
 			String gabarito, String resposta) {
 
 		if (resposta.equals(gabarito)) {
 			resultado = true;
 			posicaoPersonagem += valorDado;
-			//score += 3; // Acertar uma respota add 3
 
-		} else {
-			resultado = false;
-			//score -= 1; // Errar uma resposta sub 1
 		}
+		resultado = false;
 		adicionarPontuacao(resultado);
 		return resultado;
 	}
-	
-	@SuppressWarnings("unused")
-	private void adicionarPontuacao(boolean resultado){
-		if(resultado==true)
+
+	/**
+	 * Esse metodo adiciona a pontuação no score do personagem,
+	 * 
+	 * se o personagem acerta a questao ele ganha 3 pts. se o personagem nao
+	 * estiver no inicio do tabuleiro e errar a questao ele perde 1 pt. se o
+	 * personagem estiver no inicio do tabuleiro ele nao tera nenhum ponto, logo
+	 * retorna sem fazer nada.
+	 * 
+	 * @param resultado
+	 *            informa se o personagem acertou ou errou o desafio.
+	 */
+	private void adicionarPontuacao(boolean resultado) {
+		if (resultado == true)
 			score += 3;
-		if (score!=0 && resultado==false){
+		if (score != 0 && resultado == false) {
 			score -= 1;
 		}
-		if(score==0 && resultado==false)
+		if (score == 0 && resultado == false)
 			return;
 	}
 
 	public boolean isRespostaPersonagemX() {
-
 		return resultado;
 	}
 
@@ -89,18 +118,25 @@ public class Jogo {
 		return score;
 	}
 
-	public void setScore(int score){
-		if(score < 0){
+	public void setScore(int score) {
+		if (score < 0) {
 			throw new ExcecaoJogoTabuleiro("Valor irregular no score!");
 		}
-		
+
 		this.score = score;
-		
+
 	}
+
 	public int getPosicaoPersonagem() {
 		return posicaoPersonagem;
 	}
 
+	/**
+	 * Esse metodo move o personagem no tabuleiro
+	 * 
+	 * @param posicao
+	 *            informa para qual casa o personagem tem que ir.
+	 */
 	public void moverPersonagemX(int posicao) {
 		String escolha = (definirPersonagemX) ? "X" : "Y";
 
@@ -111,28 +147,42 @@ public class Jogo {
 
 	}
 
+	/**
+	 * Esse metodo propoe uma surpresa para o personagem
+	 * 
+	 * @param valorSurpresa
+	 *            possui um valor que sera atribuido ao score do personagem
+	 * @return true se o valor for positivo e false caso seja negativo.
+	 */
 	public boolean surpresa(int valorSurpresa) {
-		boolean saida;
-		
-		if(valorSurpresa > 0){
+		boolean saida = false;
+
+		if (valorSurpresa > 0) {
 			saida = true;
-		}
-		else{
-			saida = false;
 		}
 		contemSurpresa = true;
 		return saida;
 	}
-	
-	public boolean isSurpresa(){
+
+	/**
+	 * Esse metodo mostra se contem uma surpresa.
+	 * 
+	 * @return true se contem e false caso contrario.
+	 */
+	public boolean isSurpresa() {
 		return contemSurpresa;
 	}
-	
-	public void setSurpresa(boolean surpresa){
-		this.contemSurpresa = surpresa;
-		
-		
+
+	/**
+	 * Esse metodo defini se tera uma surpresa ou nao.
+	 * 
+	 * @param contem
+	 *            recebe o valor true para existencia da surpresa e false caso
+	 *            contrario.
+	 */
+	public void setSurpresa(boolean contem) {
+		this.contemSurpresa = contem;
+
 	}
-	
 
 }
