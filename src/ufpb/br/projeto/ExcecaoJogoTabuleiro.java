@@ -1,4 +1,4 @@
-package br.ufpb.aps.jogotabuleiro;
+package ufpb.br.projeto;
 
 public class ExcecaoJogoTabuleiro extends RuntimeException{
 	

@@ -1,4 +1,4 @@
-package br.ufpb.aps.jogotabuleiro;
+package ufpb.br.projeto;
 
 import static org.junit.Assert.*;
 
