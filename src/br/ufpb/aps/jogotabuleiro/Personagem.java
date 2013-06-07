@@ -1,4 +1,4 @@
-package ufpb.br.projeto;
+package br.ufpb.aps.jogotabuleiro;
 
 /**
  * Essa classe sera composta por dois personagem: X e Y

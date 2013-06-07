@@ -1,4 +1,4 @@
-package ufpb.br.projeto;
+package br.ufpb.aps.jogotabuleiro;
 
 /**
  * Essa classe terá uma surpresa para o personagem
