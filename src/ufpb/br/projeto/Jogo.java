@@ -83,8 +83,10 @@ public class Jogo {
 			resultado = true;
 			posicaoPersonagem += valorDado;
 
+		}else{
+			resultado = false;
 		}
-		resultado = false;
+		
 		adicionarPontuacao(resultado);
 		return resultado;
 	}
