@@ -15,6 +15,8 @@ public class Jogo {
 	private boolean iniciouJogo = false;
 	private boolean definirPersonagemX;
 	private boolean contemSurpresa = false;
+	private String respostaPersonagem = "";
+	private String gabarito = "a";
 
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
@@ -50,10 +52,17 @@ public class Jogo {
 
 	}
 
-	public boolean desafio(String questao, String alternativas[],
-			String gabarito, String resposta) {
+	public void questao(String pergunta, String alternativas[]) {
+		// TODO
+	}
 
-		if (resposta.equals(gabarito)) {
+	public String getRespostaPersonagemX() {
+		return respostaPersonagem;
+	}
+
+	public void setRespostaPersonagemX(String alternativa) {
+
+		if (alternativa.equals(gabarito)) {
 			resultado = true;
 			posicaoPersonagem += valorDado;
 
@@ -62,7 +71,8 @@ public class Jogo {
 		}
 
 		adicionarPontuacao(resultado);
-		return resultado;
+
+		this.respostaPersonagem = alternativa;
 	}
 
 	private void adicionarPontuacao(boolean resultado) {
