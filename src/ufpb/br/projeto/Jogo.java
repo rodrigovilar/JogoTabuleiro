@@ -57,6 +57,7 @@ public class Jogo {
 		if(getValorDado()==0){
 			throw new ExcecaoJogoTabuleiro("Quesão não pode ser exibida antes de lançar o dado!");
 		}
+		this.responder = true;
 		setGabarito(respostaCorreta);
 	}
 
@@ -87,7 +88,7 @@ public class Jogo {
 		}
 
 		adicionarPontuacao(resultado);
-
+	
 		this.respostaPersonagem = alternativa;
 	}
 

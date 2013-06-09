@@ -253,9 +253,11 @@ public class JogoTest {
 	}
 	
 	// teste 24
-	@Test
+	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void escolherRespostaAntesDeMostrarQuestaoTest(){
-		//TODO
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.setRespostaPersonagemX("a");
 	}
 
 	// teste 25
