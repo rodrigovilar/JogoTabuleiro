@@ -74,6 +74,10 @@ public class Jogo {
 		if(!respostaValida(alternativa)){
 			throw new ExcecaoJogoTabuleiro("Resposta invalida!");
 		}
+		if(!podeResponder()){
+			throw new ExcecaoJogoTabuleiro(
+					"Não pode responder antes da pergunta ser exibida!");
+		}
 		if (alternativa.equals(gabarito)) {
 			resultado = true;
 			posicaoPersonagem += valorDado;
