@@ -244,7 +244,6 @@ public class JogoTest {
 		jogo.setSurpresa(true);
 		assertTrue("Espera-se que a posicao seja 2",
 				jogo.getPosicaoPersonagem() == 2);
-
 	}
 
 	// teste 23
@@ -302,5 +301,13 @@ public class JogoTest {
 	public void testValorDadoAntesDeComeçarJogo(){
 		jogo.setEscolhaPersonagemX(true);
 		assertTrue(jogo.getValorDado()==0);
+	}
+	
+	// teste 30
+	@Test
+	public void verificaPosicaoInicialDoPersonagem() {
+		jogo.setEscolhaPersonagemX(true);
+		assertTrue("Espera-se que a posicao seja 2",
+				jogo.getPosicaoPersonagem() == 0);
 	}
 }
