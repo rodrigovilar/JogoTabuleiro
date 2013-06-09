@@ -160,7 +160,7 @@ public class Jogo {
 		return valorDado;
 	}
 
-	public boolean isResponder() {
+	public boolean podeResponder() {
 		return responder;
 	}
 }
