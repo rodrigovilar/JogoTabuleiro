@@ -285,5 +285,15 @@ public class JogoTest {
 		jogo.setRespostaPersonagemX("d");
 		assertEquals(false,jogo.respostaValida(jogo.getRespostaPersonagemX()));
 	}
+	
+	//teste 28
+	@Test
+	public void verificaRespostaDoPersonagemX(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+		jogo.setRespostaPersonagemX("a");
+		assertEquals("a",jogo.getRespostaPersonagemX());
+	}
 
 }
