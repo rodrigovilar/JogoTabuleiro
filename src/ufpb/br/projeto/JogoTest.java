@@ -301,12 +301,28 @@ public class JogoTest {
 		jogo.setEscolhaPersonagemX(true);
 		assertTrue(jogo.getValorDado()==0);
 	}
-	
+
 	// teste 30
 	@Test
 	public void verificaPosicaoInicialDoPersonagem() {
 		jogo.setEscolhaPersonagemX(true);
 		assertTrue("Espera-se que a posicao seja 2",
 				jogo.getPosicaoPersonagem() == 0);
+	}
+
+	// teste 31
+	@Test
+	public void verificarPosicaoAposAcertoEAposErro() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
+		jogo.setRespostaPersonagemX("a");
+		
+		jogo.lancarDado();
+		jogo.questao("questao", new String[] { "a", "b", "c" },"b");
+		jogo.setRespostaPersonagemX("a");
+
+		assertTrue("Espera-se que o personagem esteja na posicao 1",
+				jogo.getPosicaoPersonagem() == 1);
 	}
 }
