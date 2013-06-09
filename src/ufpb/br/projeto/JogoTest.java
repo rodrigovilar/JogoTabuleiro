@@ -255,6 +255,14 @@ public class JogoTest {
 				(jogo.surpresa(0)));
 	}
 
+	//teste 23
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void NaoMostrarQuestaoAntesDeJogarDado(){
+
+		jogo.setEscolhaPersonagemX(true);
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+	}
+
 	// teste 25
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void escolherQuestaoInexistente() {
@@ -270,6 +278,7 @@ public class JogoTest {
 	//teste 26
 	@Test
 	public void respostaValidaTest(){
+
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
 		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
@@ -279,21 +288,23 @@ public class JogoTest {
 
 	//teste 27
 	public void respostaInvalidaTest(){
+
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
 		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("d");
 		assertEquals(false,jogo.respostaValida(jogo.getRespostaPersonagemX()));
 	}
-	
+
 	//teste 28
 	@Test
 	public void verificaRespostaDoPersonagemX(){
+
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
 		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 		assertEquals("a",jogo.getRespostaPersonagemX());
 	}
-
+	
 }
