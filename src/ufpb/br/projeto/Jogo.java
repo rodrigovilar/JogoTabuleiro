@@ -1,10 +1,5 @@
 package ufpb.br.projeto;
 
-/**
- * Essa classe sera a fachada do jogo.
- * 
- * @author jonathas Firmo
- */
 public class Jogo {
 
 	private String tabuleiro[] = new String[] { null, null, null, null };
