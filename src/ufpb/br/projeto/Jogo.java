@@ -52,8 +52,14 @@ public class Jogo {
 
 	}
 
-	public void questao(String pergunta, String alternativas[]) {
+	public void questao(String pergunta, String alternativas[], String respostaCorreta) {
+		setGabarito(respostaCorreta);
 		// TODO
+	}
+
+	private void setGabarito(String respostaCorreta) {
+		this.gabarito = respostaCorreta;
+		
 	}
 
 	public String getRespostaPersonagemX() {
@@ -62,12 +68,16 @@ public class Jogo {
 
 	public void setRespostaPersonagemX(String alternativa) {
 
+		if(!respostaValida(alternativa)){
+			throw new ExcecaoJogoTabuleiro("Resposta invalida!");
+		}
 		if (alternativa.equals(gabarito)) {
 			resultado = true;
 			posicaoPersonagem += valorDado;
 
 		} else {
 			resultado = false;
+			
 		}
 
 		adicionarPontuacao(resultado);
@@ -134,5 +144,12 @@ public class Jogo {
 		this.contemSurpresa = contem;
 
 	}
-
+	
+	public boolean respostaValida(String alternativa){
+		boolean result = false;
+		if((alternativa.equals("a") || alternativa.equals("b")) || alternativa.equals("c")){
+			result = true;
+		}
+		return result;
+	}
 }

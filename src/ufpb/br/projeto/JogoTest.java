@@ -94,7 +94,7 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("pergunta", new String[] { "a", "b", "c" });
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 		assertTrue("Espera-se que o personagem responda correto o desafio",
 				jogo.isResultadoQuestao());
@@ -107,7 +107,7 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		assertTrue("Espera-se que o personagem esteja na posicao 1",
@@ -120,7 +120,7 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("b");
 
 		assertTrue("Espera-se que o personagem esteja na posicao 0",
@@ -141,7 +141,7 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		assertEquals(3, jogo.getScore());
@@ -153,7 +153,7 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("b");
 
 		assertEquals(0, jogo.getScore());
@@ -165,11 +165,11 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("b");
 		jogo.isResultadoQuestao();
 		assertEquals(2, jogo.getScore());
@@ -181,15 +181,15 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		assertTrue("Espera-se que o personagem X tenha ganhado o jogo",
@@ -202,15 +202,15 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 
 		jogo.lancarDado();
@@ -222,7 +222,7 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 		jogo.setSurpresa(true);
 		assertTrue("Espera-se que casa contenha uma surpresa",
@@ -235,7 +235,7 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 		jogo.setSurpresa(true);
 		assertTrue("Espera-se que casa contenha uma surpresa boa",
@@ -248,11 +248,23 @@ public class JogoTest {
 
 		jogo.setEscolhaPersonagemX(true);
 		jogo.lancarDado();
-		jogo.questao("questao", new String[] { "a", "b", "c" });
+		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
 		jogo.setSurpresa(true);
 		assertFalse("Espera-se que casa contenha uma surpresa ruim",
 				(jogo.surpresa(0)));
+	}
+
+	// teste 25
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void escolherQuestaoInexistente() {
+
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+		jogo.setRespostaPersonagemX("d");
+		assertFalse("Espera-se que a resposta não seja valida",
+				jogo.respostaValida(jogo.getRespostaPersonagemX()));
 	}
 
 }
