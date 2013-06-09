@@ -151,7 +151,6 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("b");
