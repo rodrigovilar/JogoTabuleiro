@@ -79,7 +79,6 @@ public class Jogo {
 
 		} else {
 			resultado = false;
-			
 		}
 
 		adicionarPontuacao(resultado);
@@ -109,7 +108,6 @@ public class Jogo {
 		if (score < 0) {
 			throw new ExcecaoJogoTabuleiro("Valor irregular no score!");
 		}
-
 		this.score = score;
 
 	}
@@ -125,7 +123,6 @@ public class Jogo {
 			throw new ExcecaoJogoTabuleiro("Posicao irregular!");
 		}
 		this.tabuleiro[posicao] = escolha;
-
 	}
 
 	public boolean surpresa(int valorSurpresa) {
