@@ -267,4 +267,14 @@ public class JogoTest {
 				jogo.respostaValida(jogo.getRespostaPersonagemX()));
 	}
 
+	//teste 26
+	@Test
+	public void respostaValidaTest(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+		jogo.setRespostaPersonagemX("a");
+		assertEquals(true,jogo.respostaValida(jogo.getRespostaPersonagemX()));
+	}
+
 }

@@ -3,7 +3,7 @@ package ufpb.br.projeto;
 /**
  * Essa classe sera a fachada do jogo.
  * 
- * @author jonathas Firmo
+ * @authors jonathas Firmo, Adriano Patrício and Lucas Cruz
  */
 public class Jogo {
 
