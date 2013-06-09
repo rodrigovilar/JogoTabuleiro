@@ -245,14 +245,17 @@ public class JogoTest {
 				jogo.getPosicaoPersonagem() == 2);
 	}
 
-	// teste 23
-	// teste 24
-
 	//teste 23
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void NaoMostrarQuestaoAntesDeJogarDado(){
 		jogo.setEscolhaPersonagemX(true);
 		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+	}
+	
+	// teste 24
+	@Test
+	public void escolherRespostaAntesDeMostrarQuestaoTest(){
+		//TODO
 	}
 
 	// teste 25
