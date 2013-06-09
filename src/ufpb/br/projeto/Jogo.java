@@ -154,4 +154,8 @@ public class Jogo {
 		}
 		return result;
 	}
+
+	public int getValorDado() {
+		return valorDado;
+	}
 }
