@@ -306,5 +306,13 @@ public class JogoTest {
 		jogo.setRespostaPersonagemX("a");
 		assertEquals("a",jogo.getRespostaPersonagemX());
 	}
-	
+
+	//teste 29
+	@Test
+	public void ValorDadoAntesDeComeçarJogoTest(){
+
+		jogo.setEscolhaPersonagemX(true);
+		assertTrue(jogo.getValorDado()==0);
+	}
+
 }
