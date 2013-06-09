@@ -52,16 +52,8 @@ public class Jogo {
 
 	}
 
-	public int getValorDado() {
-		return valorDado;
-	}
-
 	public void questao(String pergunta, String alternativas[], String respostaCorreta) {
-		if(getValorDado()==0){
-			throw new ExcecaoJogoTabuleiro("A pergunta não pode ser formulada antes de lançar dado!");
-		}
 		setGabarito(respostaCorreta);
-		// TODO
 	}
 
 	private void setGabarito(String respostaCorreta) {
@@ -149,7 +141,10 @@ public class Jogo {
 
 	public void setSurpresa(boolean contem) {
 		this.contemSurpresa = contem;
-
+		// Exemplo que adiciona mais 1 na posicao
+		if(this.contemSurpresa){
+			this.posicaoPersonagem++;
+		}
 	}
 	
 	public boolean respostaValida(String alternativa){
