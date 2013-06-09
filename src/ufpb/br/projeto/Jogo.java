@@ -15,7 +15,7 @@ public class Jogo {
 	private boolean iniciouJogo = false;
 	private boolean definirPersonagemX;
 	private boolean contemSurpresa = false;
-	private boolean perguntar = false;
+	private boolean responder = false;
 	private String respostaPersonagem = "";
 	private String gabarito = "a";
 
@@ -160,7 +160,7 @@ public class Jogo {
 		return valorDado;
 	}
 
-	public boolean isPerguntar() {
-		return perguntar;
+	public boolean isResponder() {
+		return responder;
 	}
 }
