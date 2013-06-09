@@ -159,4 +159,8 @@ public class Jogo {
 	public int getValorDado() {
 		return valorDado;
 	}
+
+	public boolean isPerguntar() {
+		return perguntar;
+	}
 }
