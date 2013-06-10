@@ -322,4 +322,10 @@ public class JogoTest {
 		assertTrue("Espera-se que o personagem esteja na posicao 1",
 				jogo.getPosicaoPersonagem() == 1);
 	}
+	@Test
+	public void testNomeJogador(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.setNomeJogador("Joao");
+		assertTrue("Espera-se que o personagem seja Joao",jogo.getNomeJogador()=="Joao");
+	}
 }

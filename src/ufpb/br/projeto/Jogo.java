@@ -3,12 +3,13 @@ package ufpb.br.projeto;
 /**
  * Essa classe sera a fachada do jogo.
  * 
- * @authors jonathas Firmo, Adriano Patrício and Lucas Cruz
+ * @authors jonathas Firmo, Adriano Patrï¿½cio and Lucas Cruz
  */
 public class Jogo {
 
 	private String tabuleiro[] = new String[] { null, null, null, null };
 	private int posicaoPersonagem;
+	private String nomeJogador;
 	private int valorDado;
 	private boolean resultado;
 	private int score;
@@ -32,7 +33,7 @@ public class Jogo {
 
 	public void setEscolhaPersonagemX(boolean b) {
 		if (iniciouJogo) {
-			throw new ExcecaoJogoTabuleiro("O jogo já foi iniciado!");
+			throw new ExcecaoJogoTabuleiro("O jogo jï¿½ foi iniciado!");
 		}
 
 		this.definirPersonagemX = b;
@@ -41,11 +42,11 @@ public class Jogo {
 	public int lancarDado() {
 
 		if (acabou()) {
-			throw new ExcecaoJogoTabuleiro("O jogo já foi acabado!");
+			throw new ExcecaoJogoTabuleiro("O jogo jï¿½ foi acabado!");
 		}
 
 		if (!definirPersonagemX) {
-			throw new ExcecaoJogoTabuleiro(" O Personagem não foi definido!");
+			throw new ExcecaoJogoTabuleiro(" O Personagem nï¿½o foi definido!");
 		}
 
 		iniciouJogo = true;
@@ -55,7 +56,7 @@ public class Jogo {
 
 	public void questao(String pergunta, String alternativas[], String respostaCorreta) {
 		if(getValorDado()==0){
-			throw new ExcecaoJogoTabuleiro("Quesão não pode ser exibida antes de lançar o dado!");
+			throw new ExcecaoJogoTabuleiro("Quesï¿½o nï¿½o pode ser exibida antes de lanï¿½ar o dado!");
 		}
 		this.responder = true;
 		setGabarito(respostaCorreta);
@@ -77,7 +78,7 @@ public class Jogo {
 		}
 		if(!podeResponder()){
 			throw new ExcecaoJogoTabuleiro(
-					"Não pode responder antes da pergunta ser exibida!");
+					"Nï¿½o pode responder antes da pergunta ser exibida!");
 		}
 		if (alternativa.equals(gabarito)) {
 			resultado = true;
@@ -167,5 +168,13 @@ public class Jogo {
 
 	public boolean podeResponder() {
 		return responder;
+	}
+
+	public void setNomeJogador(String s) {
+		this.nomeJogador=s;
+	}
+
+	public String getNomeJogador() {
+		return this.nomeJogador;
 	}
 }
