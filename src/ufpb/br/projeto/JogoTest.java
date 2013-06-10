@@ -309,7 +309,19 @@ public class JogoTest {
 		assertTrue("Espera-se que o personagem esteja na posicao 1",
 				jogo.getPosicaoPersonagem() == 1);
 	}
-	
+	// teste 31
+	@Test
+	public void	verificarScoreSalvo(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+		jogo.setRespostaPersonagemX("a");
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"b");
+		jogo.setRespostaPersonagemX("b");
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"c");
+		jogo.setRespostaPersonagemX("c");
+		assertTrue("Espera-se que o score seja 9",jogo.getScore() == 9);
+	}
 	// teste 35
 	@Test
 	public void testNomeJogador(){
