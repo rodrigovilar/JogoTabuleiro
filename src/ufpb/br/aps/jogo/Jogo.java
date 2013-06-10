@@ -7,14 +7,15 @@ import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 /**
  * Essa classe sera a fachada do jogo.
  * 
- * @authors jonathas Firmo, Adriano Patr�cio and Lucas Cruz
+ * @authors Jonathas Firmo, Adriano Patricio and Lucas Cruz
  */
 public class Jogo {
 
 	private String tabuleiro[] = new String[] { null, null, null, null };
-	private int posicaoPersonagem;
+	private int posicaoPersonagem; 
 	private Personagem personagem = new Personagem();
 	private Dado dado = new Dado();
+	private Questao questao = new Questao();
 	private boolean resultado;
 	private int score;
 	private boolean iniciouJogo = false;
@@ -22,7 +23,7 @@ public class Jogo {
 	private boolean contemSurpresa = false;
 	private boolean responder = false;
 	private String respostaPersonagem = "";
-	private String gabarito = "a";
+	private String gabarito = "";
 
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
@@ -37,7 +38,7 @@ public class Jogo {
 
 	public void setEscolhaPersonagemX(boolean b) {
 		if (iniciouJogo) {
-			throw new ExcecaoJogoTabuleiro("O jogo j� foi iniciado!");
+			throw new ExcecaoJogoTabuleiro("O jogo ja foi iniciado!");
 		}
 
 		this.definirPersonagemX = b;
@@ -46,33 +47,36 @@ public class Jogo {
 	public int lancarDado() {
 
 		if (acabou()) {
-			throw new ExcecaoJogoTabuleiro("O jogo j� foi acabado!");
+			throw new ExcecaoJogoTabuleiro("O jogo ja foi acabado!");
 		}
 
 		if (!definirPersonagemX) {
-			throw new ExcecaoJogoTabuleiro(" O Personagem n�o foi definido!");
+			throw new ExcecaoJogoTabuleiro(" O Personagem nao foi definido!");
 		}
 
 		iniciouJogo = true;
 		return dado.lancarDado();
 
 	}
-
 	public void questao(String pergunta, String alternativas[],
 			String respostaCorreta) {
 		if (dado.getValorDoDado() == 0) {
 			throw new ExcecaoJogoTabuleiro(
-					"Ques�o n�o pode ser exibida antes de lan�ar o dado!");
+					"Questao nao pode ser exibida antes de lancar o dado!");
 		}
 		this.responder = true;
-		setGabarito(respostaCorreta);
+		questao.setGabarito(respostaCorreta);
 	}
-
+/*
 	private void setGabarito(String respostaCorreta) {
 		this.gabarito = respostaCorreta;
 
 	}
-
+	
+	private String getGabarito(){
+		return gabarito;
+	}
+*/
 	public String getRespostaPersonagemX() {
 		return respostaPersonagem;
 	}
@@ -84,9 +88,9 @@ public class Jogo {
 		}
 		if (!podeResponder()) {
 			throw new ExcecaoJogoTabuleiro(
-					"N�o pode responder antes da pergunta ser exibida!");
+					"Nao pode responder antes da pergunta ser exibida!");
 		}
-		if (alternativa.equals(gabarito)) {
+		if (alternativa.equals(questao.getGabarito())) {
 			resultado = true;
 			posicaoPersonagem += dado.lancarDado();
 
