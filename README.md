@@ -6,12 +6,12 @@
 =====================================================
 <h3>Sobre o Jogo</h3>
 
-Um jogo de tabuleiro onde as perguntas d√£o condi√ß√£o ao jogador de avan√ßar ou retroceder durante o jogo. Pontos ser√£o contados por respostas certas e erradas o que irar proporcionar um rank estabelecido no final para saber qual jogador conseguiu concluir o jogo ou ate mesmo, caso desista informar uma margem de pontos adquiridos ate o momento do cancelamento por parte do jogador..
+Um jogo de tabuleiro onde as perguntas d„o condiÁ„o ao jogador de avanÁar ou retroceder durante o jogo. Pontos ser√£o contados por respostas certas e erradas o que irar proporcionar um rank estabelecido no final para saber qual jogador conseguiu concluir o jogo ou ate mesmo, caso desista informar uma margem de pontos adquiridos ate o momento do cancelamento por parte do jogador..
 
 ======================================================
-<h3>Instru√ß√µes</h3>
+<h3>InstruÁıes</h3>
 
-- Informar qual a op√ß√£o correta. <br />
+- Informar qual a opÁ„o correta. <br />
 <pre><code><i>Exemplo: A, B ou C?
     A
 "Certa Resposta"</i>
@@ -19,14 +19,14 @@ Um jogo de tabuleiro onde as perguntas d√£o condi√ß√£o ao jogador de avan√ßar ou
 
 
 ======================================================
-
+<br /><br />
 Repository of our project Analysis and Systems Projects
-
+<br /><br />
 Prof: Rodrigo Vilar
-
+<br /><br />
 Alunos: Adriano, Jonathas e Lucas
-
-=====================================================
+<br /><br />
+======================================================
 
 <blockquote>Languagem: Portuguese (BR),<br />
  Programming language: Java (Library / Java 7 / jre7)</blockquote>
