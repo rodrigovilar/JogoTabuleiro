@@ -9,20 +9,13 @@ Alunos: Adriano, Jonathas e Lucas
 
 =====================================================
 
-Project map (Scheme)
+Project map
 
-ufpb/
-	br/
-		aps/
-			excecoes/
-			projeto/
-			teste/
+ufpb/br/aps/excecoes/
+ufpb/br/aps/projeto/
+ufpb/br/aps/teste/
 			
 =====================================================
 
-Languagem: Portuguese (BR)
-Programming language: Java (Library / Java 7 / jre7)
-
-
-
-				< ------------- >
+<Languagem: Portuguese (BR)
+ Programming language: Java (Library / Java 7 / jre7) >
