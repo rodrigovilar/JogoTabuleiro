@@ -6,7 +6,7 @@
 =====================================================
 <h3>Sobre o Jogo</h3>
 
-Um jogo de tabuleiro onde as perguntas dão condição ao jogador de avançar ou retroceder durante o jogo. Ponto serão contados respostas certas e erradas. Um rank estabelecido no final para saber qual jogador conseguiu concluir o jogo ou ate mesmo, caso desista informar uma margem de pontos adquiridos ate o momento do cancelamento por parte do jogador..
+Um jogo de tabuleiro onde as perguntas dão condição ao jogador de avançar ou retroceder durante o jogo. Pontos serão contados por respostas certas e erradas o que irar proporcionar um rank estabelecido no final para saber qual jogador conseguiu concluir o jogo ou ate mesmo, caso desista informar uma margem de pontos adquiridos ate o momento do cancelamento por parte do jogador..
 
 ======================================================
 <h3>Instruções</h3>
