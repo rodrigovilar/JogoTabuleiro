@@ -1,6 +1,5 @@
 <h1>Jogo Tabuleiro</h1><br />
-<h3>Perguntas e Respostas</h3>
-<br />
+<center>![QUIZ2013](https://lh4.ggpht.com/cAzMRKm8MX0zjW-c9wwFT8SFNalKsFPpW1fOyDGf5Qvs9-3bTgIUP06uVAssPGMqE4U "Perguntas e Respostas")</center>
 <br />
 =====================================================
 <h3>Sobre o Jogo</h3>
