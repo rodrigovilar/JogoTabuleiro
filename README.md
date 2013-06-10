@@ -19,14 +19,14 @@ Um jogo de tabuleiro onde as perguntas dão condição ao jogador de avançar ou
 
 
 ======================================================
-
+<br /><br />
 Repository of our project Analysis and Systems Projects
-
+<br /><br />
 Prof: Rodrigo Vilar
-
+<br /><br />
 Alunos: Adriano, Jonathas e Lucas
-
-=====================================================
+<br /><br />
+======================================================
 
 <blockquote>Languagem: Portuguese (BR),<br />
  Programming language: Java (Library / Java 7 / jre7)</blockquote>
