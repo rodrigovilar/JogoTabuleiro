@@ -7,4 +7,8 @@ public class Dado {
 	public int lancarDado(){
 		return valorDoDado = 1;
 	}
+	
+	public int getValorDoDado(){
+		return valorDoDado;
+	}
 }
