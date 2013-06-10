@@ -1,4 +1,4 @@
-package ufpb.br.aps.teste;
+package ufpb.br.aps.jogo.teste;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
