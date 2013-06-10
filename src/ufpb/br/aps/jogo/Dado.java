@@ -5,6 +5,6 @@ public class Dado {
 	private int valorDoDado;
 
 	public int lancarDado(){
-		return 1;
+		return valorDoDado = 1;
 	}
 }
