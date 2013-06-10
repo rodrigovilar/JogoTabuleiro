@@ -88,7 +88,6 @@ public class JogoTest {
 		jogo.setRespostaPersonagemX("a");
 		assertTrue("Espera-se que o personagem responda correto o desafio",
 				jogo.isResultadoQuestao());
-
 	}
 
 	// teste 11
@@ -98,7 +97,6 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		assertTrue("Espera-se que o personagem esteja na posicao 1",
 				jogo.getPosicaoPersonagem() == 1);
 	}
@@ -110,7 +108,6 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("b");
-
 		assertTrue("Espera-se que o personagem esteja na posicao 0",
 				jogo.getPosicaoPersonagem() == 0);
 	}
@@ -129,7 +126,6 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		assertEquals(3, jogo.getScore());
 	}
 
@@ -140,7 +136,6 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("b");
-
 		assertEquals(0, jogo.getScore());
 	}
 
@@ -165,15 +160,12 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		assertTrue("Espera-se que o personagem X tenha ganhado o jogo",
 				jogo.acabou());
 	}
@@ -185,15 +177,12 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-
 		jogo.lancarDado();
 	}
 
@@ -314,14 +303,14 @@ public class JogoTest {
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"a");
 		jogo.setRespostaPersonagemX("a");
-		
 		jogo.lancarDado();
 		jogo.questao("questao", new String[] { "a", "b", "c" },"b");
 		jogo.setRespostaPersonagemX("a");
-
 		assertTrue("Espera-se que o personagem esteja na posicao 1",
 				jogo.getPosicaoPersonagem() == 1);
 	}
+	
+	// teste 35
 	@Test
 	public void testNomeJogador(){
 		jogo.setEscolhaPersonagemX(true);
