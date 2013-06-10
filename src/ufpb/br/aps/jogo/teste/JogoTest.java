@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import ufpb.br.aps.excecoes.ExcecaoJogoTabuleiro;
 import ufpb.br.aps.jogo.Jogo;
+import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 
 public class JogoTest {
