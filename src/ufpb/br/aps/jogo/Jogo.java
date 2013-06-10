@@ -67,16 +67,7 @@ public class Jogo {
 		this.responder = true;
 		questao.setGabarito(respostaCorreta);
 	}
-/*
-	private void setGabarito(String respostaCorreta) {
-		this.gabarito = respostaCorreta;
 
-	}
-	
-	private String getGabarito(){
-		return gabarito;
-	}
-*/
 	public String getRespostaPersonagemX() {
 		return respostaPersonagem;
 	}
