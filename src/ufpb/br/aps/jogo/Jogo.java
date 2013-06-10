@@ -118,7 +118,6 @@ public class Jogo {
 			throw new ExcecaoJogoTabuleiro("Valor irregular no score!");
 		}
 		this.score = score;
-
 	}
 
 	public int getPosicaoPersonagem() {
