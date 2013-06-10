@@ -1,4 +1,4 @@
-package ufpb.br.aps.projeto;
+package ufpb.br.aps.jogo;
 
 public class Questionario {
 

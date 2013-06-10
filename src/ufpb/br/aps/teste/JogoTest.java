@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ufpb.br.aps.excecoes.ExcecaoJogoTabuleiro;
-import ufpb.br.aps.projeto.Jogo;
+import ufpb.br.aps.jogo.Jogo;
 
 
 public class JogoTest {
