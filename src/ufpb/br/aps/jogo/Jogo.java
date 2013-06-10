@@ -2,6 +2,8 @@ package ufpb.br.aps.jogo;
 
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
+//import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
+
 /**
  * Essa classe sera a fachada do jogo.
  * 
@@ -56,9 +58,11 @@ public class Jogo {
 
 	}
 
-	public void questao(String pergunta, String alternativas[], String respostaCorreta) {
-		if(dado.getValorDoDado()==0){
-			throw new ExcecaoJogoTabuleiro("Ques�o n�o pode ser exibida antes de lan�ar o dado!");
+	public void questao(String pergunta, String alternativas[],
+			String respostaCorreta) {
+		if (dado.getValorDoDado() == 0) {
+			throw new ExcecaoJogoTabuleiro(
+					"Ques�o n�o pode ser exibida antes de lan�ar o dado!");
 		}
 		this.responder = true;
 		setGabarito(respostaCorreta);
@@ -66,7 +70,7 @@ public class Jogo {
 
 	private void setGabarito(String respostaCorreta) {
 		this.gabarito = respostaCorreta;
-		
+
 	}
 
 	public String getRespostaPersonagemX() {
@@ -75,10 +79,10 @@ public class Jogo {
 
 	public void setRespostaPersonagemX(String alternativa) {
 
-		if(!respostaValida(alternativa)){
+		if (!respostaValida(alternativa)) {
 			throw new ExcecaoJogoTabuleiro("Resposta invalida!");
 		}
-		if(!podeResponder()){
+		if (!podeResponder()) {
 			throw new ExcecaoJogoTabuleiro(
 					"N�o pode responder antes da pergunta ser exibida!");
 		}
@@ -91,7 +95,7 @@ public class Jogo {
 		}
 
 		adicionarPontuacao(resultado);
-	
+
 		this.respostaPersonagem = alternativa;
 	}
 
@@ -150,14 +154,15 @@ public class Jogo {
 	public void setSurpresa(boolean contem) {
 		this.contemSurpresa = contem;
 		// Exemplo que adiciona mais 1 na posicao
-		if(this.contemSurpresa){
+		if (this.contemSurpresa) {
 			this.posicaoPersonagem++;
 		}
 	}
-	
-	public boolean respostaValida(String alternativa){
+
+	public boolean respostaValida(String alternativa) {
 		boolean result = false;
-		if((alternativa.equals("a") || alternativa.equals("b")) || alternativa.equals("c")){
+		if ((alternativa.equals("a") || alternativa.equals("b"))
+				|| alternativa.equals("c")) {
 			result = true;
 		}
 		return result;
@@ -168,7 +173,9 @@ public class Jogo {
 	}
 
 	public void setNomeJogador(String s) {
-		getPersonagem().setNome(s);
+		if (s.length() > 2) {
+			getPersonagem().setNome(s);
+		}
 	}
 
 	public String getNomeJogador() {
@@ -178,12 +185,17 @@ public class Jogo {
 	public boolean encerrarAntesDoTempo() {
 		return true;
 	}
-	
-	public int getValorDoDado(){
+
+	public int getValorDoDado() {
 		return dado.getValorDoDado();
 	}
-	
-	public Personagem getPersonagem(){
+
+	public Personagem getPersonagem() {
 		return personagem;
+	}
+
+	public int getTamanhoNome() {
+		return getNomeJogador().length();
+
 	}
 }
