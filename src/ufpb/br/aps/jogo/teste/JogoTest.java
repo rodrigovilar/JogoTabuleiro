@@ -340,6 +340,19 @@ public class JogoTest {
 		
 	}
 	
+	// teste 34
+	@Test
+	public void	verificarScoreDePartidaCancelada(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+		jogo.setRespostaPersonagemX("a");
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"b");
+		jogo.setRespostaPersonagemX("b");
+		jogo.encerrarAntesDoTempo();
+		assertTrue("Espera-se que o score seja 6",jogo.getScore() == 6);
+	}
+	
 	// teste 35
 	@Test
 	public void testNomeJogador(){
