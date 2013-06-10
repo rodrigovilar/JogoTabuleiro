@@ -11,7 +11,7 @@ public class Jogo {
 
 	private String tabuleiro[] = new String[] { null, null, null, null };
 	private int posicaoPersonagem;
-	private Personagem personagem;
+	private Personagem personagem = new Personagem();
 	private Dado dado = new Dado();
 	private boolean resultado;
 	private int score;
