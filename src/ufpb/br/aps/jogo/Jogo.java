@@ -11,7 +11,7 @@ public class Jogo {
 
 	private String tabuleiro[] = new String[] { null, null, null, null };
 	private int posicaoPersonagem;
-	private String nomeJogador;
+	private Personagem personagem;
 	private Dado dado = new Dado();
 	private boolean resultado;
 	private int score;
@@ -169,11 +169,11 @@ public class Jogo {
 	}
 
 	public void setNomeJogador(String s) {
-		this.nomeJogador=s;
+		getPersonagem().setNome(s);
 	}
 
 	public String getNomeJogador() {
-		return this.nomeJogador;
+		return getPersonagem().getNome();
 	}
 
 	public boolean encerrarAntesDoTempo() {
@@ -182,5 +182,9 @@ public class Jogo {
 	
 	public int getValorDoDado(){
 		return dado.getValorDoDado();
+	}
+	
+	public Personagem getPersonagem(){
+		return personagem;
 	}
 }
