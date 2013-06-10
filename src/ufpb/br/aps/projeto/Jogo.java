@@ -1,6 +1,6 @@
-package ufpb.br.projeto;
+package ufpb.br.aps.projeto;
 
-import ufpb.br.excecoes.ExcecaoJogoTabuleiro;
+import ufpb.br.aps.excecoes.ExcecaoJogoTabuleiro;
 
 /**
  * Essa classe sera a fachada do jogo.

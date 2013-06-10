@@ -1,4 +1,4 @@
-package ufpb.br.projeto;
+package ufpb.br.aps.projeto;
 
 public class Desafio {
 

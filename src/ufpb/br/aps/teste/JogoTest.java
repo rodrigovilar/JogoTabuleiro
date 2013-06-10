@@ -1,11 +1,11 @@
-package ufpb.br.teste;
+package ufpb.br.aps.teste;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import ufpb.br.excecoes.ExcecaoJogoTabuleiro;
-import ufpb.br.projeto.Jogo;
+import ufpb.br.aps.excecoes.ExcecaoJogoTabuleiro;
+import ufpb.br.aps.projeto.Jogo;
 
 
 public class JogoTest {

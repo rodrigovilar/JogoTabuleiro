@@ -1,4 +1,4 @@
-package ufpb.br.projeto;
+package ufpb.br.aps.projeto;
 
 /**
  * Essa classe sera composta por dois personagem: X e Y
