@@ -177,4 +177,8 @@ public class Jogo {
 	public String getNomeJogador() {
 		return this.nomeJogador;
 	}
+
+	public boolean encerrarAntesDoTempo() {
+		return true;
+	}
 }

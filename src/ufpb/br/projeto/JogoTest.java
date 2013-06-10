@@ -288,14 +288,12 @@ public class JogoTest {
 		jogo.setRespostaPersonagemX("a");
 		assertEquals("a",jogo.getRespostaPersonagemX());
 	}
-
 	//teste 29
 	@Test
 	public void testValorDadoAntesDeComeçarJogo(){
 		jogo.setEscolhaPersonagemX(true);
 		assertTrue(jogo.getValorDado()==0);
 	}
-
 	// teste 30
 	@Test
 	public void verificarPosicaoAposAcertoEAposErro() {
@@ -321,6 +319,17 @@ public class JogoTest {
 		jogo.questao("pergunta", new String[] { "a", "b", "c" },"c");
 		jogo.setRespostaPersonagemX("c");
 		assertTrue("Espera-se que o score seja 9",jogo.getScore() == 9);
+	}
+	// teste 33
+	@Test
+	public void jogoTerminado(){
+		jogo.setEscolhaPersonagemX(true);
+		jogo.lancarDado();
+		jogo.questao("pergunta", new String[] { "a", "b", "c" },"a");
+		jogo.setRespostaPersonagemX("a");
+		jogo.encerrarAntesDoTempo();
+		assertTrue("Espera que o jogo tenha terminado antes da hora", jogo.encerrarAntesDoTempo() == true);
+		
 	}
 	// teste 35
 	@Test
