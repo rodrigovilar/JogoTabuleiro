@@ -1,5 +1,7 @@
 package ufpb.br.projeto;
 
+import ufpb.br.excecoes.ExcecaoJogoTabuleiro;
+
 /**
  * Essa classe sera a fachada do jogo.
  * 

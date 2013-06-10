@@ -1,8 +1,12 @@
-package ufpb.br.projeto;
+package ufpb.br.teste;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import ufpb.br.excecoes.ExcecaoJogoTabuleiro;
+import ufpb.br.projeto.Jogo;
+
 
 public class JogoTest {
 

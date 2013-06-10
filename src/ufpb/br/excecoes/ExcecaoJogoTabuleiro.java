@@ -1,4 +1,4 @@
-package ufpb.br.projeto;
+package ufpb.br.excecoes;
 
 @SuppressWarnings("serial")
 public class ExcecaoJogoTabuleiro extends RuntimeException{
