@@ -12,7 +12,7 @@ public class Jogo {
 	private String tabuleiro[] = new String[] { null, null, null, null };
 	private int posicaoPersonagem;
 	private String nomeJogador;
-	private int valorDado;
+	private Dado dado = new Dado();
 	private boolean resultado;
 	private int score;
 	private boolean iniciouJogo = false;
@@ -52,12 +52,12 @@ public class Jogo {
 		}
 
 		iniciouJogo = true;
-		return valorDado = 1;
+		return dado.lancarDado();
 
 	}
 
 	public void questao(String pergunta, String alternativas[], String respostaCorreta) {
-		if(getValorDado()==0){
+		if(dado.getValorDoDado()==0){
 			throw new ExcecaoJogoTabuleiro("Ques�o n�o pode ser exibida antes de lan�ar o dado!");
 		}
 		this.responder = true;
@@ -84,7 +84,7 @@ public class Jogo {
 		}
 		if (alternativa.equals(gabarito)) {
 			resultado = true;
-			posicaoPersonagem += valorDado;
+			posicaoPersonagem += dado.lancarDado();
 
 		} else {
 			resultado = false;
@@ -164,10 +164,6 @@ public class Jogo {
 		return result;
 	}
 
-	public int getValorDado() {
-		return valorDado;
-	}
-
 	public boolean podeResponder() {
 		return responder;
 	}
@@ -182,5 +178,9 @@ public class Jogo {
 
 	public boolean encerrarAntesDoTempo() {
 		return true;
+	}
+	
+	public int getValorDoDado(){
+		return dado.getValorDoDado();
 	}
 }

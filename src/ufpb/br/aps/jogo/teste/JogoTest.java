@@ -297,7 +297,7 @@ public class JogoTest {
 	@Test
 	public void testValorDadoAntesDeComeçarJogo(){
 		jogo.setEscolhaPersonagemX(true);
-		assertTrue(jogo.getValorDado()==0);
+		assertTrue(jogo.getValorDoDado()==0);
 	}
 	
 	// teste 30
