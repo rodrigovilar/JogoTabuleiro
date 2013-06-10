@@ -1,5 +1,7 @@
 <h1>Jogo Tabuleiro</h1><br />
-<h5>Perguntas e Respostas</h5>
+<h3>Perguntas e Respostas</h3>
+<br />
+<br />
 =====================================================
 <h3>Sobre o Jogo</h3>
 
