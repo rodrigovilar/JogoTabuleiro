@@ -435,7 +435,7 @@ public class JogoTest {
 	public void removerQuestaoDeNovo(){
 		Questao questao = criarQuestao();
 
-		jogo.cadastrarQuestao(questao);
+		jogo.cadastrarQuestao(questao); // Devia estar no gerente de questão
 		
 		List<Questao> questoesSalvas = jogo.listarQuestoes();
 		Questao questaoSalva = questoesSalvas.get(0);
@@ -445,7 +445,7 @@ public class JogoTest {
 	}
 
 	private Questao criarQuestao() {
-		return new Questao();
+		return new Questao();  // Devia ficar no gerente de questão = questionario
 	}
 	
 	
