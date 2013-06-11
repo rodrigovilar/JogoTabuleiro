@@ -7,11 +7,11 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.ufpb.aps.jogo.fachada.Jogo;
 
 
 import ufpb.br.aps.jogo.entidade.Questao;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
+import ufpb.br.aps.jogo.fachada.Jogo;
 
 //import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
 
