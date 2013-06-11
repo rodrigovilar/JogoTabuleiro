@@ -37,7 +37,7 @@ public class Questionario {
 
 	}
 
-	public Questao alterarQuestao(Questao questaoNova){
+	public Questao alterarQuestao(Questao questaoNova) {
 		for (Questao questaoAntiga : listaDeQuestoes) {
 			if (questaoAntiga.getPergunta().equals(questaoNova.getPergunta())) {
 				removerQuestao(questaoAntiga);
@@ -48,9 +48,7 @@ public class Questionario {
 		}
 		throw new ExcecaoJogoTabuleiro("Questao inexistente!");
 	}
-	
-	
-	
+
 	public int sizeQuestionario() {
 		return listaDeQuestoes.size();
 	}
@@ -65,7 +63,7 @@ public class Questionario {
 		}
 
 	}
-	
+
 	public Questao criarQuestao() {
 		return new Questao();
 	}

@@ -1,5 +1,7 @@
 package ufpb.br.aps.jogo.entidade;
 
+import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
+
 public class Questao {
 
 	private String pergunta;
@@ -11,6 +13,9 @@ public class Questao {
 	}
 
 	public void setPergunta(String pergunta) {
+		if(pergunta == null){
+			throw new ExcecaoJogoTabuleiro("Não é permitido pergunta nula!");
+		}
 		this.pergunta = pergunta;
 	}
 
@@ -28,6 +33,9 @@ public class Questao {
 	}
 
 	public void setGabarito(String resposta) {
+		if(resposta == null){
+			throw new ExcecaoJogoTabuleiro("Não é permitido gabarito sem resposta!");
+		}
 		this.gabarito = resposta;
 	}
 

@@ -410,7 +410,7 @@ public class JogoTest {
 		Questao questaoSalva = questoesSalvas.get(0);
 		assertEquals(questao, questaoSalva);
 	}
-	
+
 	// teste 38
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void cadastrarQuestaoNovamente() {
@@ -447,29 +447,35 @@ public class JogoTest {
 		fachada.removerQuestao(questao);
 		fachada.removerQuestao(questao);
 	}
-	
-	//teste 41
+
+	// teste 41
 	@Test(expected = ExcecaoJogoTabuleiro.class)
-	public void removerQuestaoInexistente(){
+	public void removerQuestaoInexistente() {
 		Questao questao = fachada.criarQuestao();
-		fachada.removerQuestao(questao);	
+		fachada.removerQuestao(questao);
 	}
+
 	// teste 42
 	@Test
-	public void alterarQuestao(){
+	public void alterarQuestao() {
 		Questao questao = fachada.criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
-		
+
 		List<Questao> questoesSalvas = fachada.listarQuestoes();
 		fachada.alterarQuestao(questao);
 		Questao questaoSalva = questoesSalvas.get(0);
 		assertEquals(questao, questaoSalva);
-		
 	}
-	
-	
-	
+
+	// teste 43
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void inserirPerguntaNula() {
+		Questao questao = new Questao();
+		questao.setPergunta(null);
+
+	}
+
 	/*
 	 * private Questao criarQuestao() { return new Questao(); }
 	 */
