@@ -12,4 +12,8 @@ public class GerentePersonagem {
 	public void addPersonagem(Personagem personagem){
 		personagens.add(personagem);
 	}
+
+	public List<Personagem> getPersonagens() {
+		return personagens;
+	}
 }
