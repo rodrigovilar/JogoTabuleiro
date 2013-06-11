@@ -22,7 +22,11 @@ public class GerentePersonagem {
 		return personagem;
 	}
 	
-	public String nomePersonagem(){
+	public String obterNome(){
 		return getPersonagens().getNome();
+	}
+	
+	public void alterarNome(String nome){
+		getPersonagens().setNome(nome);
 	}
 }
