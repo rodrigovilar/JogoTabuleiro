@@ -7,13 +7,18 @@ import ufpb.br.aps.jogo.entidade.Personagem;
 
 public class GerentePersonagem {
 
-	private List<Personagem> personagens = new ArrayList<Personagem>();
+	//private List<Personagem> personagens = new ArrayList<Personagem>();
 	
-	public void addPersonagem(Personagem personagem){
-		personagens.add(personagem);
+	//Acho que não talvez precise dessa lista basta a 
+	//cada vez que for iniciar um novo jogo com um Personagem diferente dar um new() 
+	
+	private Personagem personagem;
+	
+	public void criarPersonagem(Personagem personagem){
+		this.personagem = personagem;
 	}
 
-	public List<Personagem> getPersonagens() {
-		return personagens;
+	public Personagem getPersonagens() {
+		return personagem;
 	}
 }
