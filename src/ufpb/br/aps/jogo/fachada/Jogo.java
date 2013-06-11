@@ -33,8 +33,8 @@ public class Jogo {
 	private boolean responder = false;
 	private String respostaPersonagem = "";
 
-	public void criarQuestao(Questao questao) {
-		questionario.criarQuestao(questao);
+	public void cadastrarQuestao(Questao questao) {
+		questionario.cadastrarQuestao(questao);
 	}
 
 	public List<Questao> listarQuestoes() {
