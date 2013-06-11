@@ -443,6 +443,10 @@ public class JogoTest {
 		jogo.removerQuestao(questao);
 		jogo.removerQuestao(questao);
 	}
+
+	private Questao criarQuestao() {
+		return new Questao();
+	}
 	
 	
 	
