@@ -1,8 +1,9 @@
-package ufpb.br.aps.jogo.entidade;
+package br.ufpb.aps.jogo.controle;
 
 import java.util.LinkedList;
 import java.util.List;
 
+import ufpb.br.aps.jogo.entidade.Questao;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 public class Questionario {

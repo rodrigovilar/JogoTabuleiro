@@ -2,10 +2,11 @@ package ufpb.br.aps.jogo.fachada;
 
 import java.util.List;
 
+import br.ufpb.aps.jogo.controle.Questionario;
+
 import ufpb.br.aps.jogo.entidade.Dado;
 import ufpb.br.aps.jogo.entidade.Personagem;
 import ufpb.br.aps.jogo.entidade.Questao;
-import ufpb.br.aps.jogo.entidade.Questionario;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 //import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
