@@ -18,6 +18,24 @@ public class Questionario {
 		return listaDeQuestoes;
 	}
 
+	public void removerQuestao(Questao questao) {
+		obterQuestao(questao.getPergunta());
+		this.listarQuestoes().remove(questao);
+
+	}
+
+	public Questao obterQuestao(String pergunta) {
+
+		for (Questao questao : listaDeQuestoes) {
+			if (questao.getPergunta().equals(pergunta)) {
+				return questao;
+
+			}
+		}
+		throw new ExcecaoJogoTabuleiro("Questao inexistente!");
+
+	}
+
 	public int sizeQuestionario() {
 		return listaDeQuestoes.size();
 	}
