@@ -2,7 +2,6 @@ package ufpb.br.aps.jogo.entidade;
 
 public class Questao {
 
-	private int id;
 	private String pergunta;
 	private String[] alternativas;
 	private String gabarito;
@@ -13,14 +12,6 @@ public class Questao {
 
 	public void setPergunta(String pergunta) {
 		this.pergunta = pergunta;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String[] getAlternativas() {
@@ -39,6 +30,25 @@ public class Questao {
 	public void setGabarito(String resposta) {
 		this.gabarito = resposta;
 	}
-	
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Questao))
+			return false;
+		Questao other = (Questao) obj;
+		if (pergunta == null) {
+			if (other.pergunta != null)
+				return false;
+		} else if (!alternativas.equals(other.alternativas)) {
+			return false;
+		}
+
+		else if (!gabarito.equals(other.gabarito))
+			return false;
+		return true;
+	}
 
 }
