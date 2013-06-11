@@ -1,5 +1,7 @@
 package ufpb.br.aps.jogo;
 
+import java.util.List;
+
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 //import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
@@ -11,10 +13,14 @@ import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
  */
 public class Jogo {
 
-	private String tabuleiro[] = new String[] { null, null, null, null };
-	private int posicaoPersonagem; 
+	
+	private Questionario questionario = new Questionario(); 
 	private Personagem personagem = new Personagem();
 	private Dado dado = new Dado();
+	
+	private String tabuleiro[] = new String[] { null, null, null, null };
+	private int posicaoPersonagem; 
+	
 	private Questao questao = new Questao();
 	private boolean resultado;
 	private int score;
@@ -25,6 +31,13 @@ public class Jogo {
 	private String respostaPersonagem = "";
 	private String gabarito = "";
 
+	public void criarQuestao(Questao questao){
+		questionario.criarQuestao(questao);
+	}
+	public List<Questao> listarQuestoes(){
+		return questionario.listarQuestoes();
+	}
+	
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
 			return true;
@@ -67,7 +80,6 @@ public class Jogo {
 		this.responder = true;
 		questao.setGabarito(respostaCorreta);
 	}
-
 	public String getRespostaPersonagemX() {
 		return respostaPersonagem;
 	}

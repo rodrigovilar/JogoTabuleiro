@@ -1,10 +1,14 @@
 package ufpb.br.aps.jogo.teste;
 
 import static org.junit.Assert.*;
+
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import ufpb.br.aps.jogo.Jogo;
+import ufpb.br.aps.jogo.Questao;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 //import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
@@ -212,7 +216,7 @@ public class JogoTest {
 		jogo.setRespostaPersonagemX("a");
 		jogo.setSurpresa(true);
 		assertTrue("Espera-se que casa contenha uma surpresa boa",
-				(jogo.surpresa(2)));
+				(jogo.getPosicaoPersonagem() == 2));
 	}
 
 	// teste 21
@@ -376,4 +380,23 @@ public class JogoTest {
 				jogo.getNomeJogador() == "Luc");
 		assertEquals(3, jogo.getTamanhoNome());
 	}
+
+	@Test
+	public void cadastrarQuestao() {
+		Questao questao1 = new Questao();
+		questao1.setId(1);
+		questao1.setPergunta("Pergunta");
+		questao1.setAlternativas(new String[] { "a", "b", "c" });
+		questao1.setGabarito("a");
+
+		jogo.criarQuestao(questao1);
+
+		List<Questao> questoesSalvas = jogo.listarQuestoes();
+		assertEquals(1, questoesSalvas.size());
+
+		Questao questao1Salva = questoesSalvas.get(0);
+		assertEquals(questao1, questao1Salva);
+
+	}
+
 }
