@@ -7,8 +7,6 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-
-
 import ufpb.br.aps.jogo.entidade.Questao;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 import ufpb.br.aps.jogo.fachada.Jogo;
@@ -18,7 +16,6 @@ import ufpb.br.aps.jogo.fachada.Jogo;
 public class JogoTest {
 
 	private Jogo fachada;
-
 
 	@Before
 	public void criarJogo() {
@@ -279,7 +276,8 @@ public class JogoTest {
 		fachada.lancarDado();
 		fachada.questao("pergunta", new String[] { "a", "b", "c" }, "a");
 		fachada.setRespostaPersonagemX("a");
-		assertEquals(true, fachada.respostaValida(fachada.getRespostaPersonagemX()));
+		assertEquals(true,
+				fachada.respostaValida(fachada.getRespostaPersonagemX()));
 	}
 
 	// teste 27
@@ -288,7 +286,8 @@ public class JogoTest {
 		fachada.lancarDado();
 		fachada.questao("pergunta", new String[] { "a", "b", "c" }, "a");
 		fachada.setRespostaPersonagemX("d");
-		assertEquals(false, fachada.respostaValida(fachada.getRespostaPersonagemX()));
+		assertEquals(false,
+				fachada.respostaValida(fachada.getRespostaPersonagemX()));
 	}
 
 	// teste 28
@@ -345,7 +344,7 @@ public class JogoTest {
 		fachada.questao("pergunta", new String[] { "a", "b", "c" }, "a");
 		fachada.setRespostaPersonagemX("a");
 		fachada.encerrarAntesDoTempo();
-	//	assertEquals("Espera o valor 3", 3, jogo.verificaPontuacao("Lucas"));
+		// assertEquals("Espera o valor 3", 3, jogo.verificaPontuacao("Lucas"));
 	}
 
 	// teste 33
@@ -397,62 +396,70 @@ public class JogoTest {
 	// teste 37
 	@Test
 	public void cadastrarQuestao() {
-		//criarQuestao()
-		Questao questao1 = new Questao();
-		questao1.setPergunta("Pergunta");
-		questao1.setAlternativas(new String[] { "a", "b", "c" });
-		questao1.setGabarito("a");
+		// criarQuestao()
+		Questao questao = new Questao();
+		questao.setPergunta("Pergunta");
+		questao.setAlternativas(new String[] { "a", "b", "c" });
+		questao.setGabarito("a");
 
-		fachada.cadastrarQuestao(questao1);
+		fachada.cadastrarQuestao(questao);
 
 		List<Questao> questoesSalvas = fachada.listarQuestoes();
 		assertEquals(1, questoesSalvas.size());
 
-		Questao questao1Salva = questoesSalvas.get(0);
-		assertEquals(questao1, questao1Salva);
+		Questao questaoSalva = questoesSalvas.get(0);
+		assertEquals(questao, questaoSalva);
 	}
 	
 	// teste 38
 	@Test(expected = ExcecaoJogoTabuleiro.class)
-	public void cadastrarQuestaoNovamente(){
-		
+	public void cadastrarQuestaoNovamente() {
+
 		Questao questao = fachada.criarQuestao();
 		fachada.cadastrarQuestao(questao);
 		fachada.cadastrarQuestao(questao);
-	
 	}
-	
+
 	// teste 39
 	@Test
-	public void removerQuestao(){
+	public void removerQuestao() {
 		Questao questao = fachada.criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
-		
+
 		List<Questao> questoesSalvas = fachada.listarQuestoes();
 		Questao questaoSalva = questoesSalvas.get(0);
 		assertEquals(questao, questaoSalva);
 		fachada.removerQuestao(questao);
-		assertTrue(questoesSalvas.size()==0);	
+		assertTrue(questoesSalvas.size() == 0);
 	}
-	
+
 	// teste 40
 	@Test(expected = ExcecaoJogoTabuleiro.class)
-	public void removerQuestaoDeNovo(){
+	public void removerQuestaoDeNovo() {
 		Questao questao = fachada.criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
-		
+
 		List<Questao> questoesSalvas = fachada.listarQuestoes();
 		Questao questaoSalva = questoesSalvas.get(0);
 		assertEquals(questao, questaoSalva);
 		fachada.removerQuestao(questao);
 		fachada.removerQuestao(questao);
 	}
-
-	/*private Questao criarQuestao() {
-		return new Questao();
-	}*/
-
 	
+	//teste 41
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void removerQuestaoInexistente(){
+		Questao questao = fachada.criarQuestao();
+		fachada.removerQuestao(questao);	
+	}
+	
+	
+	
+	
+	/*
+	 * private Questao criarQuestao() { return new Questao(); }
+	 */
+
 }
