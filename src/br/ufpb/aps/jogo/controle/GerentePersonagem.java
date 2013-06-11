@@ -1,7 +1,7 @@
 package br.ufpb.aps.jogo.controle;
 
-import java.util.ArrayList;
-import java.util.List;
+/*import java.util.ArrayList;
+import java.util.List;*/
 
 import ufpb.br.aps.jogo.entidade.Personagem;
 
