@@ -1,4 +1,4 @@
-package br.ufpb.aps.controle;
+package br.ufpb.aps.jogo.controle;
 
 import java.util.ArrayList;
 import java.util.List;
