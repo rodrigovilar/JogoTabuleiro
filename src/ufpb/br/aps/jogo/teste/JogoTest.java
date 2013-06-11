@@ -396,6 +396,7 @@ public class JogoTest {
 
 	@Test
 	public void cadastrarQuestao() {
+		//criarQuestao()
 		Questao questao1 = new Questao();
 		questao1.setPergunta("Pergunta");
 		questao1.setAlternativas(new String[] { "a", "b", "c" });
@@ -409,17 +410,42 @@ public class JogoTest {
 		Questao questao1Salva = questoesSalvas.get(0);
 		assertEquals(questao1, questao1Salva);
 	}
-	@Test(expected = ExcecaoJogoTabuleiro.class)
+	/@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void cadastrarQuestaoNovamente(){
-		Questao questao1 = new Questao();
-		questao1.setPergunta("Pergunta");
-		questao1.setAlternativas(new String[] { "a", "b", "c" });
-		questao1.setGabarito("a");
 		
-		jogo.cadastrarQuestao(questao1);
-		jogo.cadastrarQuestao(questao1);
+		Questao questao = criarQuestao();
+		jogo.cadastrarQuestao(questao);
+		jogo.cadastrarQuestao(questao);
 		
 	}
+	@Test
+	public void removerQuestao(){
+		Questao questao = criarQuestao();
+
+		jogo.cadastrarQuestao(questao);
+		
+		List<Questao> questoesSalvas = jogo.listarQuestoes();
+		Questao questaoSalva = questoesSalvas.get(0);
+		assertEquals(questao, questaoSalva);
+		jogo.removerQuestao(questao);
+		assertTrue(questoesSalvas.size()==0);
+		
+	}
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void removerQuestaoDeNovo(){
+		Questao questao = criarQuestao();
+
+		jogo.cadastrarQuestao(questao);
+		
+		List<Questao> questoesSalvas = jogo.listarQuestoes();
+		Questao questaoSalva = questoesSalvas.get(0);
+		assertEquals(questao, questaoSalva);
+		jogo.removerQuestao(questao);
+		jogo.removerQuestao(questao);
+	}
+	
+	
+	
 	
 	
 	
