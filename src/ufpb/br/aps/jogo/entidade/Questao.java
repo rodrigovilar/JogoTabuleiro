@@ -13,7 +13,7 @@ public class Questao {
 	}
 
 	public void setPergunta(String pergunta) {
-		if(pergunta == null){
+		if (pergunta == null) {
 			throw new ExcecaoJogoTabuleiro("Não é permitido pergunta nula!");
 		}
 		this.pergunta = pergunta;
@@ -24,6 +24,14 @@ public class Questao {
 	}
 
 	public void setAlternativas(String[] alternativas) {
+
+		for (String aux : alternativas) {
+
+			if (aux == null) {
+				throw new ExcecaoJogoTabuleiro(
+						"Não é permitido inserir alternativa nula!");
+			}
+		}
 		this.alternativas = alternativas;
 	}
 
@@ -33,8 +41,9 @@ public class Questao {
 	}
 
 	public void setGabarito(String resposta) {
-		if(resposta == null){
-			throw new ExcecaoJogoTabuleiro("Não é permitido gabarito sem resposta!");
+		if (resposta == null) {
+			throw new ExcecaoJogoTabuleiro(
+					"Não é permitido gabarito sem resposta!");
 		}
 		this.gabarito = resposta;
 	}

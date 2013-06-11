@@ -483,7 +483,13 @@ public class JogoTest {
 		questao.setGabarito(null);
 	}
 	
-	
+	//test 45
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void inserirAlternativaNula(){
+		String alternativas[] = new String[]{null,"",""};
+		Questao questao = new Questao();
+		questao.setAlternativas(alternativas);
+	}
 	
 	
 	/*
