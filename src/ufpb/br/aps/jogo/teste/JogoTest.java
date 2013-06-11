@@ -345,7 +345,7 @@ public class JogoTest {
 		jogo.questao("pergunta", new String[] { "a", "b", "c" }, "a");
 		jogo.setRespostaPersonagemX("a");
 		jogo.encerrarAntesDoTempo();
-		//assertEquals("Espera o valor 3", 3, jogo.verificaPontuacao("Lucas"));
+	//	assertEquals("Espera o valor 3", 3, jogo.verificaPontuacao("Lucas"));
 	}
 
 	// teste 33

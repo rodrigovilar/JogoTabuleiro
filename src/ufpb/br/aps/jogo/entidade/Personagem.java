@@ -1,11 +1,11 @@
 package ufpb.br.aps.jogo.entidade;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Personagem {
 	
-	private List<Personagem> listaPersonagens = new LinkedList<Personagem>();
+	private List<Personagem> listaPersonagens = new ArrayList<Personagem>();
 
 	private String nome;
 
@@ -30,17 +30,18 @@ public class Personagem {
 	public int sizeListaPersonagem(){
 		return this.listaPersonagens.size();
 	}
-	
-//	public void setResultado(String n){
-//		this.nome=n;
-//	}
-//
-//	public int getResultado() {
-//		int i;
-//		for (i =0;i<listaPersonagens.size();i++)
-//		    if (listaPersonagens.get(i).getNome()==this.nome)  
-//		         return listaPersonagens.get(i).getResultado();
-//		return listaPersonagens.get(i).getResultado();
-//	}
+
+
+	public void setResultado(String n){
+		this.nome=n;
+	}
+
+/*	public int getResultado() {
+		int i,res = -1;
+		for (i = 0;i<listaPersonagens.size();i++)
+		    if (listaPersonagens.get(i).getNome()==this.nome)  
+		         res =  listaPersonagens.get(i).getResultado();
+		return res;
+	}*/
 	
 }

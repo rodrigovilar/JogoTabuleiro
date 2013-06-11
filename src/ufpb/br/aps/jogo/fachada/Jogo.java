@@ -218,7 +218,7 @@ public class Jogo {
 	}
 
 /*	public int verificaPontuacao(String s) {
-		personagem.setResultado(s);
+		this.personagem.setResultado(s);
 		return personagem.getResultado();
 	}*/
 }
