@@ -64,7 +64,4 @@ public class Questionario {
 
 	}
 
-	public Questao criarQuestao() {
-		return new Questao();
-	}
 }
