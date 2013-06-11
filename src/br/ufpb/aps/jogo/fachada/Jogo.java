@@ -1,4 +1,4 @@
-package br.ufpb.aps.jogo.controle;
+package br.ufpb.aps.jogo.fachada;
 
 import java.util.List;
 
