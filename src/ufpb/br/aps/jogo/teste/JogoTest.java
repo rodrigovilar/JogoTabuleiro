@@ -397,12 +397,11 @@ public class JogoTest {
 	@Test
 	public void cadastrarQuestao() {
 		Questao questao1 = new Questao();
-		questao1.setId(1);
 		questao1.setPergunta("Pergunta");
 		questao1.setAlternativas(new String[] { "a", "b", "c" });
 		questao1.setGabarito("a");
 
-		jogo.criarQuestao(questao1);
+		jogo.cadastrarQuestao(questao1);
 
 		List<Questao> questoesSalvas = jogo.listarQuestoes();
 		assertEquals(1, questoesSalvas.size());
@@ -410,5 +409,19 @@ public class JogoTest {
 		Questao questao1Salva = questoesSalvas.get(0);
 		assertEquals(questao1, questao1Salva);
 	}
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void cadastrarQuestaoNovamente(){
+		Questao questao1 = new Questao();
+		questao1.setPergunta("Pergunta");
+		questao1.setAlternativas(new String[] { "a", "b", "c" });
+		questao1.setGabarito("a");
+		
+		jogo.cadastrarQuestao(questao1);
+		jogo.cadastrarQuestao(questao1);
+		
+	}
+	
+	
+	
 
 }

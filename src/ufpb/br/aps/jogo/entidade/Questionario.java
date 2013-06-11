@@ -8,7 +8,8 @@ import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 public class Questionario {
 	private List<Questao> listaDeQuestoes = new LinkedList<Questao>();
 
-	public void criarQuestao(Questao questao) {
+	public void cadastrarQuestao(Questao questao) {
+		equalsQuestao(questao.getPergunta());
 		this.listaDeQuestoes.add(questao);
 
 	}
@@ -21,18 +22,14 @@ public class Questionario {
 		return listaDeQuestoes.size();
 	}
 
-	public boolean equalsQuestao(String pergunta) {
-		boolean saida = false;
+	public void equalsQuestao(String pergunta) {
+
 		for (Questao q : listaDeQuestoes) {
 			if (q.getPergunta().equals(pergunta)) {
-				saida = true;
-			} else {
-				saida = false;
+
 				throw new ExcecaoJogoTabuleiro("Já existe essa questao!");
 			}
-
 		}
-		return saida;
 
 	}
 }
