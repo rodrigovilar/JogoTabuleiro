@@ -475,7 +475,17 @@ public class JogoTest {
 		questao.setPergunta(null);
 
 	}
-
+	
+	//teste 44
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void inserirGabaritoSemResposta(){
+		Questao questao = new Questao();
+		questao.setGabarito(null);
+	}
+	
+	
+	
+	
 	/*
 	 * private Questao criarQuestao() { return new Questao(); }
 	 */
