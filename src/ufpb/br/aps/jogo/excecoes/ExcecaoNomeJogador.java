@@ -5,8 +5,7 @@ public class ExcecaoNomeJogador extends RuntimeException {
 	
 	// Em fase de conceito
 
-	public ExcecaoNomeJogador
-	(String msg) {
+	public ExcecaoNomeJogador(String msg) {
 		super(msg);
 	}
 

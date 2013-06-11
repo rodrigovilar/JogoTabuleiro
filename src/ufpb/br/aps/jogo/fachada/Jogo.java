@@ -21,11 +21,10 @@ public class Jogo {
 	private Questionario questionario = new Questionario();
 	private Personagem personagem = new Personagem();
 	private Dado dado = new Dado();
-
-	private String tabuleiro[] = new String[] { null, null, null, null };
-	private int posicaoPersonagem;
-
 	private Questao questao = new Questao();
+	private String tabuleiro[] = new String[] { null, null, null, null };
+	
+	private int posicaoPersonagem;
 	private boolean resultado;
 	private int score;
 	private boolean iniciouJogo = false;
