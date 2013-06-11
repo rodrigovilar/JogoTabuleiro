@@ -436,6 +436,7 @@ public class JogoTest {
 		assertTrue(questoesSalvas.size()==0);	
 	}
 	
+	// teste 40
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void removerQuestaoDeNovo(){
 		Questao questao = fachada.criarQuestao();
