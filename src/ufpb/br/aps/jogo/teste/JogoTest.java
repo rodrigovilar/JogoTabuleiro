@@ -410,7 +410,7 @@ public class JogoTest {
 		Questao questao1Salva = questoesSalvas.get(0);
 		assertEquals(questao1, questao1Salva);
 	}
-	/@Test(expected = ExcecaoJogoTabuleiro.class)
+	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void cadastrarQuestaoNovamente(){
 		
 		Questao questao = criarQuestao();
