@@ -17,14 +17,13 @@ import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
  */
 public class Jogo {
 
-	
-	private Questionario questionario = new Questionario(); 
+	private Questionario questionario = new Questionario();
 	private Personagem personagem = new Personagem();
 	private Dado dado = new Dado();
-	
+
 	private String tabuleiro[] = new String[] { null, null, null, null };
-	private int posicaoPersonagem; 
-	
+	private int posicaoPersonagem;
+
 	private Questao questao = new Questao();
 	private boolean resultado;
 	private int score;
@@ -34,13 +33,14 @@ public class Jogo {
 	private boolean responder = false;
 	private String respostaPersonagem = "";
 
-	public void criarQuestao(Questao questao){
+	public void criarQuestao(Questao questao) {
 		questionario.criarQuestao(questao);
 	}
-	public List<Questao> listarQuestoes(){
+
+	public List<Questao> listarQuestoes() {
 		return questionario.listarQuestoes();
 	}
-	
+
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
 			return true;
@@ -74,6 +74,7 @@ public class Jogo {
 		return dado.lancarDado();
 
 	}
+
 	public void questao(String pergunta, String alternativas[],
 			String respostaCorreta) {
 		if (dado.getValorDoDado() == 0) {
@@ -83,6 +84,7 @@ public class Jogo {
 		this.responder = true;
 		questao.setGabarito(respostaCorreta);
 	}
+
 	public String getRespostaPersonagemX() {
 		return respostaPersonagem;
 	}

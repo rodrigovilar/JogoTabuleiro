@@ -334,7 +334,21 @@ public class JogoTest {
 		assertTrue("Espera-se que o score seja 9", jogo.getScore() == 9);
 	}
 
-	// teste 32
+// teste 32
+	
+		
+//		public void verificaPontuacaoDeUmJogadorDeterminado() {
+//			jogo.setEscolhaPersonagemX(true);
+//			jogo.setNomeJogador("Lucas");
+//			jogo.lancarDado();
+//			jogo.questao("pergunta", new String[] { "a", "b", "c" }, "a");
+//			jogo.setRespostaPersonagemX("a");
+//			jogo.encerrarAntesDoTempo();
+//			jogo.verificaPontuacao("Lucas");
+//
+//			assertTrue("Espera-se que o personagem seja Luc",
+//					jogo.getNomeJogador() == "Luc");
+//		}
 
 	// teste 33
 	@Test
