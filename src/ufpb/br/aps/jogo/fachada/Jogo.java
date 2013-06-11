@@ -42,14 +42,14 @@ public class Jogo {
 		return questionario.listarQuestoes();
 	}
 
-	public void removerQuestao(Questao questao){
+	public void removerQuestao(Questao questao) {
 		questionario.removerQuestao(questao);
 	}
-	
-	public Questao alterarQuestao(Questao questao){
+
+	public Questao alterarQuestao(Questao questao) {
 		return questionario.alterarQuestao(questao);
 	}
-	
+
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
 			return true;
@@ -60,13 +60,13 @@ public class Jogo {
 	public boolean isEscolhaPersonagemX() {
 		return definirPersonagemX;
 	}
-	
-	public void criaPersonagem(){
+
+	public void criaPersonagem() {
 		Personagem p = new Personagem();
 		p.setNome(getNomeJogador());
 		personagem.criarPersonagem(p);
 	}
-	
+
 	public void setEscolhaPersonagemX(boolean b) {
 		if (iniciouJogo) {
 			throw new ExcecaoJogoTabuleiro("O jogo ja foi iniciado!");
@@ -226,12 +226,9 @@ public class Jogo {
 
 	}
 
-/*	public int verificaPontuacao(String s) {
-		this.personagem.setResultado(s);
-		return personagem.getResultado();
-	}*/
-	
-	public Questao criarQuestao() {
-		return questionario.criarQuestao();
-	}
+	/*
+	 * public int verificaPontuacao(String s) { this.personagem.setResultado(s);
+	 * return personagem.getResultado(); }
+	 */
+
 }

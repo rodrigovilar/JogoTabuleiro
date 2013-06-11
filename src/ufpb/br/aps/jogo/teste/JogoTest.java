@@ -392,11 +392,10 @@ public class JogoTest {
 				fachada.getNomeJogador() == "Luc");
 		assertEquals(3, fachada.getTamanhoNome());
 	}
-
+	
 	// teste 37
 	@Test
 	public void cadastrarQuestao() {
-		// criarQuestao()
 		Questao questao = new Questao();
 		questao.setPergunta("Pergunta");
 		questao.setAlternativas(new String[] { "a", "b", "c" });
@@ -410,12 +409,11 @@ public class JogoTest {
 		Questao questaoSalva = questoesSalvas.get(0);
 		assertEquals(questao, questaoSalva);
 	}
-
+	
 	// teste 38
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void cadastrarQuestaoNovamente() {
-
-		Questao questao = fachada.criarQuestao();
+		Questao questao = criarQuestao();
 		fachada.cadastrarQuestao(questao);
 		fachada.cadastrarQuestao(questao);
 	}
@@ -423,7 +421,7 @@ public class JogoTest {
 	// teste 39
 	@Test
 	public void removerQuestao() {
-		Questao questao = fachada.criarQuestao();
+		Questao questao = criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
 
@@ -437,7 +435,7 @@ public class JogoTest {
 	// teste 40
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void removerQuestaoDeNovo() {
-		Questao questao = fachada.criarQuestao();
+		Questao questao = criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
 
@@ -451,14 +449,14 @@ public class JogoTest {
 	// teste 41
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void removerQuestaoInexistente() {
-		Questao questao = fachada.criarQuestao();
+		Questao questao = criarQuestao();
 		fachada.removerQuestao(questao);
 	}
-
+	
 	// teste 42
 	@Test
 	public void alterarQuestao() {
-		Questao questao = fachada.criarQuestao();
+		Questao questao = criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
 
@@ -491,9 +489,13 @@ public class JogoTest {
 		questao.setAlternativas(alternativas);
 	}
 	
-	
-	/*
-	 * private Questao criarQuestao() { return new Questao(); }
-	 */
+	// metodo auxiliar de teste
+	public Questao criarQuestao(){
+		Questao questao = new Questao();
+		questao.setPergunta("Pergunta");
+		questao.setAlternativas(new String[] { "a", "b", "c" });
+		questao.setGabarito("a");
+		return questao;
+	}
 
 }
