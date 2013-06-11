@@ -7,8 +7,9 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import ufpb.br.aps.jogo.Jogo;
-import ufpb.br.aps.jogo.Questao;
+import br.ufpb.aps.jogo.controle.Jogo;
+
+import ufpb.br.aps.jogo.entidade.Questao;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 //import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
@@ -396,7 +397,6 @@ public class JogoTest {
 
 		Questao questao1Salva = questoesSalvas.get(0);
 		assertEquals(questao1, questao1Salva);
-
 	}
-
+	
 }

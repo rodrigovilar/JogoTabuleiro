@@ -1,4 +1,4 @@
-package ufpb.br.aps.jogo;
+package ufpb.br.aps.jogo.entidade;
 
 import java.util.LinkedList;
 import java.util.List;

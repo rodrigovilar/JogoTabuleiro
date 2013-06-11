@@ -1,7 +1,11 @@
-package ufpb.br.aps.jogo;
+package br.ufpb.aps.jogo.controle;
 
 import java.util.List;
 
+import ufpb.br.aps.jogo.entidade.Dado;
+import ufpb.br.aps.jogo.entidade.Personagem;
+import ufpb.br.aps.jogo.entidade.Questao;
+import ufpb.br.aps.jogo.entidade.Questionario;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 //import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
