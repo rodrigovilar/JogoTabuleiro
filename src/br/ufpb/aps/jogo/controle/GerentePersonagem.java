@@ -21,4 +21,8 @@ public class GerentePersonagem {
 	public Personagem getPersonagens() {
 		return personagem;
 	}
+	
+	public String nomePersonagem(){
+		return getPersonagens().getNome();
+	}
 }
