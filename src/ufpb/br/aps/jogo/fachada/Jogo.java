@@ -45,6 +45,11 @@ public class Jogo {
 	public void removerQuestao(Questao questao){
 		questionario.removerQuestao(questao);
 	}
+	
+	public Questao alterarQuestao(Questao questao){
+		return questionario.alterarQuestao(questao);
+	}
+	
 	public boolean acabou() {
 		if (getPosicaoPersonagem() == 3) {
 			return true;

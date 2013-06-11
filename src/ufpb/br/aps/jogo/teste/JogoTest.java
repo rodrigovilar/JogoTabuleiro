@@ -454,7 +454,19 @@ public class JogoTest {
 		Questao questao = fachada.criarQuestao();
 		fachada.removerQuestao(questao);	
 	}
-	
+	// teste 42
+	@Test
+	public void alterarQuestao(){
+		Questao questao = fachada.criarQuestao();
+
+		fachada.cadastrarQuestao(questao);
+		
+		List<Questao> questoesSalvas = fachada.listarQuestoes();
+		fachada.alterarQuestao(questao);
+		Questao questaoSalva = questoesSalvas.get(0);
+		assertEquals(questao, questaoSalva);
+		
+	}
 	
 	
 	
