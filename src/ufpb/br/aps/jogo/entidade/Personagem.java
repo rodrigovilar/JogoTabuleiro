@@ -6,6 +6,7 @@ import java.util.List;
 public class Personagem {
 	
 	private List<Personagem> listaPersonagens = new ArrayList<Personagem>();
+	// Esta lista não devia pertencer a classe personagem e sim ao gerente de personagem
 
 	private String nome;
 
