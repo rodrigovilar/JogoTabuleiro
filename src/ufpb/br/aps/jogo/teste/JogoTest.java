@@ -394,6 +394,7 @@ public class JogoTest {
 		assertEquals(3, fachada.getTamanhoNome());
 	}
 
+	// teste 37
 	@Test
 	public void cadastrarQuestao() {
 		//criarQuestao()
@@ -411,6 +412,7 @@ public class JogoTest {
 		assertEquals(questao1, questao1Salva);
 	}
 	
+	// teste 38
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void cadastrarQuestaoNovamente(){
 		
@@ -420,6 +422,7 @@ public class JogoTest {
 	
 	}
 	
+	// teste 39
 	@Test
 	public void removerQuestao(){
 		Questao questao = criarQuestao();
@@ -449,11 +452,6 @@ public class JogoTest {
 	private Questao criarQuestao() {
 		return new Questao();
 	}
-	
-	
-	
-	
-	
-	
 
+	
 }
