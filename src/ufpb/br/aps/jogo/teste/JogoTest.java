@@ -416,7 +416,7 @@ public class JogoTest {
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void cadastrarQuestaoNovamente(){
 		
-		Questao questao = criarQuestao();
+		Questao questao = fachada.criarQuestao();
 		fachada.cadastrarQuestao(questao);
 		fachada.cadastrarQuestao(questao);
 	
@@ -425,7 +425,7 @@ public class JogoTest {
 	// teste 39
 	@Test
 	public void removerQuestao(){
-		Questao questao = criarQuestao();
+		Questao questao = fachada.criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
 		
@@ -438,7 +438,7 @@ public class JogoTest {
 	
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void removerQuestaoDeNovo(){
-		Questao questao = criarQuestao();
+		Questao questao = fachada.criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
 		
@@ -449,9 +449,9 @@ public class JogoTest {
 		fachada.removerQuestao(questao);
 	}
 
-	private Questao criarQuestao() {
+	/*private Questao criarQuestao() {
 		return new Questao();
-	}
+	}*/
 
 	
 }

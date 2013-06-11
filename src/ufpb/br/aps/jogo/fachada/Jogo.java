@@ -225,4 +225,8 @@ public class Jogo {
 		this.personagem.setResultado(s);
 		return personagem.getResultado();
 	}*/
+	
+	public Questao criarQuestao() {
+		return questionario.criarQuestao();
+	}
 }
