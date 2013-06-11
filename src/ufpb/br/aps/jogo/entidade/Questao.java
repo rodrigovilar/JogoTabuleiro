@@ -43,7 +43,7 @@ public class Questao {
 	public void setGabarito(String resposta) {
 		if (resposta == null) {
 			throw new ExcecaoJogoTabuleiro(
-					"Não é permitido gabarito sem resposta!");
+					"Não é permitido gabarito nulo!");
 		}
 		this.gabarito = resposta;
 	}
