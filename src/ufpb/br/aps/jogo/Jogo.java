@@ -29,7 +29,6 @@ public class Jogo {
 	private boolean contemSurpresa = false;
 	private boolean responder = false;
 	private String respostaPersonagem = "";
-	private String gabarito = "";
 
 	public void criarQuestao(Questao questao){
 		questionario.criarQuestao(questao);
