@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import br.ufpb.aps.jogo.fachada.Jogo;
 
+
 import ufpb.br.aps.jogo.entidade.Questao;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
@@ -17,6 +18,7 @@ import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 public class JogoTest {
 
 	private Jogo jogo;
+
 
 	@Before
 	public void criarJogo() {
@@ -334,21 +336,17 @@ public class JogoTest {
 		assertTrue("Espera-se que o score seja 9", jogo.getScore() == 9);
 	}
 
-// teste 32
-	
-		
-//		public void verificaPontuacaoDeUmJogadorDeterminado() {
-//			jogo.setEscolhaPersonagemX(true);
-//			jogo.setNomeJogador("Lucas");
-//			jogo.lancarDado();
-//			jogo.questao("pergunta", new String[] { "a", "b", "c" }, "a");
-//			jogo.setRespostaPersonagemX("a");
-//			jogo.encerrarAntesDoTempo();
-//			jogo.verificaPontuacao("Lucas");
-//
-//			assertTrue("Espera-se que o personagem seja Luc",
-//					jogo.getNomeJogador() == "Luc");
-//		}
+	// teste 32
+	@Test
+	public void verificaPontuacaoDeUmJogadorDeterminado() {
+		jogo.setEscolhaPersonagemX(true);
+		jogo.setNomeJogador("Lucas");
+		jogo.lancarDado();
+		jogo.questao("pergunta", new String[] { "a", "b", "c" }, "a");
+		jogo.setRespostaPersonagemX("a");
+		jogo.encerrarAntesDoTempo();
+		//assertEquals("Espera o valor 3", 3, jogo.verificaPontuacao("Lucas"));
+	}
 
 	// teste 33
 	@Test
@@ -412,5 +410,5 @@ public class JogoTest {
 		Questao questao1Salva = questoesSalvas.get(0);
 		assertEquals(questao1, questao1Salva);
 	}
-	
+
 }

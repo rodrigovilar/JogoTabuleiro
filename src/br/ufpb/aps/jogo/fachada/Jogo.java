@@ -51,7 +51,13 @@ public class Jogo {
 	public boolean isEscolhaPersonagemX() {
 		return definirPersonagemX;
 	}
-
+	
+	public void criaPersonagem(){
+		Personagem p = new Personagem();
+		p.setNome(getNomeJogador());
+		personagem.criarPersonagem(p);
+	}
+	
 	public void setEscolhaPersonagemX(boolean b) {
 		if (iniciouJogo) {
 			throw new ExcecaoJogoTabuleiro("O jogo ja foi iniciado!");
@@ -210,4 +216,9 @@ public class Jogo {
 		return getNomeJogador().length();
 
 	}
+
+/*	public int verificaPontuacao(String s) {
+		personagem.setResultado(s);
+		return personagem.getResultado();
+	}*/
 }
