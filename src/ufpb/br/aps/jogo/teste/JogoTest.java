@@ -359,10 +359,7 @@ public class JogoTest {
 	// teste 37
 	@Test
 	public void cadastrarQuestao() {
-		Questao questao = new Questao();
-		questao.setPergunta("Pergunta");
-		questao.setAlternativas(new String[] { "a", "b", "c" });
-		questao.setGabarito("a");
+		Questao questao = criarQuestao();
 
 		fachada.cadastrarQuestao(questao);
 
