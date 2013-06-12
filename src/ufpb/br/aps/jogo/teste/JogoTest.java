@@ -11,7 +11,6 @@ import ufpb.br.aps.jogo.entidade.Questao;
 import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 import ufpb.br.aps.jogo.fachada.Jogo;
 
-//import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
 
 public class JogoTest {
 
@@ -312,7 +311,6 @@ public class JogoTest {
 		fachada.questao("pergunta", new String[] { "a", "b", "c" }, "a");
 		fachada.setRespostaPersonagemX("a");
 		fachada.encerrarAntesDoTempo();
-		// assertEquals("Espera o valor 3", 3, jogo.verificaPontuacao("Lucas"));
 	}
 	// teste 33
 	@Test
@@ -324,7 +322,6 @@ public class JogoTest {
 		fachada.encerrarAntesDoTempo();
 		assertTrue("Espera que o jogo tenha terminado antes da hora",
 				fachada.encerrarAntesDoTempo() == true);
-
 	}
 	// teste 34
 	@Test
