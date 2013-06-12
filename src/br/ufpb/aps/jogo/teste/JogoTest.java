@@ -1,4 +1,4 @@
-package ufpb.br.aps.jogo.teste;
+package br.ufpb.aps.jogo.teste;
 
 import static org.junit.Assert.*;
 
@@ -7,9 +7,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import ufpb.br.aps.jogo.entidade.Questao;
-import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
-import ufpb.br.aps.jogo.fachada.Jogo;
+import br.ufpb.aps.jogo.entidade.Questao;
+import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
+import br.ufpb.aps.jogo.fachada.Jogo;
+
 
 
 public class JogoTest {

@@ -1,13 +1,13 @@
-package ufpb.br.aps.jogo.fachada;
+package br.ufpb.aps.jogo.fachada;
 
 import java.util.List;
 
 import br.ufpb.aps.jogo.controle.Questionario;
+import br.ufpb.aps.jogo.entidade.Dado;
+import br.ufpb.aps.jogo.entidade.Personagem;
+import br.ufpb.aps.jogo.entidade.Questao;
+import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
-import ufpb.br.aps.jogo.entidade.Dado;
-import ufpb.br.aps.jogo.entidade.Personagem;
-import ufpb.br.aps.jogo.entidade.Questao;
-import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 //import ufpb.br.aps.jogo.excecoes.ExcecaoNomeJogador;
 

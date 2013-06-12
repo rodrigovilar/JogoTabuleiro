@@ -3,8 +3,9 @@ package br.ufpb.aps.jogo.controle;
 import java.util.LinkedList;
 import java.util.List;
 
-import ufpb.br.aps.jogo.entidade.Questao;
-import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
+import br.ufpb.aps.jogo.entidade.Questao;
+import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
+
 
 public class Questionario {
 	private List<Questao> listaDeQuestoes = new LinkedList<Questao>();

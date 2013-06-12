@@ -1,4 +1,4 @@
-package ufpb.br.aps.jogo.excecoes;
+package br.ufpb.aps.jogo.excecoes;
 
 @SuppressWarnings("serial")
 public class ExcecaoNomeJogador extends RuntimeException {

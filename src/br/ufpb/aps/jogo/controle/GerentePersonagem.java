@@ -1,6 +1,6 @@
 package br.ufpb.aps.jogo.controle;
 
-import ufpb.br.aps.jogo.entidade.Personagem;
+import br.ufpb.aps.jogo.entidade.Personagem;
 
 public class GerentePersonagem { 
 	

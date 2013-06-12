@@ -1,4 +1,4 @@
-package ufpb.br.aps.jogo.entidade;
+package br.ufpb.aps.jogo.entidade;
 
 public class Dado {
 	

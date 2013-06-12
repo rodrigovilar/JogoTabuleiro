@@ -1,6 +1,6 @@
-package ufpb.br.aps.jogo.entidade;
+package br.ufpb.aps.jogo.entidade;
 
-import ufpb.br.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
+import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 public class Questao {
 
