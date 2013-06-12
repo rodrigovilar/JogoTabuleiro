@@ -23,7 +23,7 @@ public class Jogo {
 	private Dado dado = new Dado();
 	private Questao questao = new Questao();
 	private String tabuleiro[] = new String[] { null, null, null, null };
-	
+
 	private int posicaoPersonagem;
 	private boolean resultado;
 	private int score;
@@ -70,7 +70,6 @@ public class Jogo {
 		if (iniciouJogo) {
 			throw new ExcecaoJogoTabuleiro("O jogo ja foi iniciado!");
 		}
-
 		this.definirPersonagemX = b;
 	}
 
@@ -223,9 +222,8 @@ public class Jogo {
 
 	}
 
-	/*
-	 * public int verificaPontuacao(String s) { this.personagem.setResultado(s);
-	 * return personagem.getResultado(); }
-	 */
-
+	/*public int verificaPontuacao(String s) { 
+		this.personagem.setResultado(s);
+		return personagem.getResultado(); 
+	}*/
 }
