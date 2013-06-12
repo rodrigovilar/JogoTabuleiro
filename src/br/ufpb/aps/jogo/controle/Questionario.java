@@ -12,7 +12,6 @@ public class Questionario {
 	public void cadastrarQuestao(Questao questao) {
 		equalsQuestao(questao.getPergunta());
 		this.listaDeQuestoes.add(questao);
-
 	}
 
 	public List<Questao> listarQuestoes() {
@@ -22,7 +21,6 @@ public class Questionario {
 	public void removerQuestao(Questao questao) {
 		obterQuestao(questao.getPergunta());
 		this.listarQuestoes().remove(questao);
-
 	}
 
 	public Questao obterQuestao(String pergunta) {
@@ -30,11 +28,9 @@ public class Questionario {
 		for (Questao questao : listaDeQuestoes) {
 			if (questao.getPergunta().equals(pergunta)) {
 				return questao;
-
 			}
 		}
 		throw new ExcecaoJogoTabuleiro("Questao inexistente!");
-
 	}
 
 	public Questao alterarQuestao(Questao questaoNova) {
@@ -43,7 +39,6 @@ public class Questionario {
 				removerQuestao(questaoAntiga);
 				cadastrarQuestao(questaoNova);
 				return questaoNova;
-
 			}
 		}
 		throw new ExcecaoJogoTabuleiro("Questao inexistente!");
@@ -54,14 +49,10 @@ public class Questionario {
 	}
 
 	public void equalsQuestao(String pergunta) {
-
 		for (Questao q : listaDeQuestoes) {
 			if (q.getPergunta().equals(pergunta)) {
-
 				throw new ExcecaoJogoTabuleiro("Já existe essa questao!");
 			}
 		}
-
 	}
-
 }

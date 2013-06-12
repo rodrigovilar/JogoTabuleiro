@@ -115,11 +115,9 @@ public class Jogo {
 		if (alternativa.equals(questao.getGabarito())) {
 			resultado = true;
 			posicaoPersonagem += dado.lancarDado();
-
 		} else {
 			resultado = false;
 		}
-
 		adicionarPontuacao(resultado);
 
 		this.respostaPersonagem = alternativa;
