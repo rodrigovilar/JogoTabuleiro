@@ -538,13 +538,24 @@ public class JogoTest {
 		questao.setGabarito(null);
 	}
 
-	// test 43
+	// teste 43
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void inserirAlternativaNula() {
 		String alternativas[] = new String[] { null, "", "" };
 		Questao questao = new Questao();
 		questao.setAlternativas(alternativas);
 	}
+	// teste 44
+		@Test
+		public void verificarPersonagemXNoTabuleiro() {
+			fachada.setEscolhaPersonagemX(true);
+			lancarDado();
+			Questao questao1 = questao();
+			criarQuestao(questao1);
+			escolhaDaResposta();
+			assertTrue(fachada.personagemNoTabuleiro());
+		}
+
 
 	// Metodo auxiliar de teste
 	public Questao questao() {
