@@ -155,7 +155,7 @@ public class JogoTest {
 		assertEquals(2, fachada.verificarScore());
 	}
 
-	// teste 15 
+	// teste 15
 	@Test
 	public void vencedorPersonagemX() {
 		escolhaDoPersonagemX();
@@ -164,17 +164,17 @@ public class JogoTest {
 		Questao questao1 = questao();
 		criarQuestao(questao1);
 		escolhaDaResposta();
-		
+
 		lancarDado();
 		Questao questao2 = questao();
 		criarQuestao(questao2);
 		fachada.setRespostaPersonagemY("b");
-		
+
 		lancarDado();
 		Questao questao3 = questao();
 		criarQuestao(questao3);
 		escolhaDaResposta();
-		
+
 		lancarDado();
 		Questao questao4 = questao();
 		criarQuestao(questao4);
@@ -187,6 +187,7 @@ public class JogoTest {
 		assertTrue("Espera-se que o personagem X tenha ganhado o jogo",
 				fachada.acabou());
 	}
+
 	// teste 16
 	@Test
 	public void vencedorPersonagemY() {
@@ -196,17 +197,17 @@ public class JogoTest {
 		Questao questao1 = questao();
 		criarQuestao(questao1);
 		fachada.setRespostaPersonagemX("b");
-		
+
 		lancarDado();
 		Questao questao2 = questao();
 		criarQuestao(questao2);
 		fachada.setRespostaPersonagemY("a");
-		
+
 		lancarDado();
 		Questao questao3 = questao();
 		criarQuestao(questao3);
 		fachada.setRespostaPersonagemX("b");
-		
+
 		lancarDado();
 		Questao questao4 = questao();
 		criarQuestao(questao4);
@@ -216,7 +217,7 @@ public class JogoTest {
 		Questao questao5 = questao();
 		criarQuestao(questao5);
 		fachada.setRespostaPersonagemX("b");
-		
+
 		lancarDado();
 		Questao questao6 = questao();
 		criarQuestao(questao6);
@@ -224,8 +225,6 @@ public class JogoTest {
 		assertTrue("Espera-se que o personagem X tenha ganhado o jogo",
 				fachada.acabou());
 	}
-	
-	
 
 	// teste 17
 	@Test(expected = ExcecaoJogoTabuleiro.class)
@@ -248,7 +247,7 @@ public class JogoTest {
 		lancarDado();
 	}
 
-	// teste 18 
+	// teste 18
 	@Test
 	public void verificarCasaSurpresa() {
 
@@ -261,7 +260,7 @@ public class JogoTest {
 		assertTrue("Espera-se que casa contenha surpresa", fachada.isSurpresa());
 	}
 
-	// teste 19 
+	// teste 19
 	@Test
 	public void verificaPosicaoAposSupresaBoa() {
 		escolhaDoPersonagemX();
@@ -273,6 +272,19 @@ public class JogoTest {
 
 		assertTrue("Espera-se que a posicao seja 2",
 				fachada.getPosicaoPersonagem() == 2);
+	}
+
+	// teste 20 
+	@Test
+	public void verificaPosicaoAposSupresaRuim() {
+		escolhaDoPersonagemX();
+		lancarDado();
+		Questao questao = questao();
+		criarQuestao(questao);
+		escolhaDaResposta();
+		fachada.surpresaRuim();
+		assertTrue("Espera-se que a posicao seja 0",
+				fachada.getPosicaoPersonagem() == 0);
 	}
 
 	// teste 21
