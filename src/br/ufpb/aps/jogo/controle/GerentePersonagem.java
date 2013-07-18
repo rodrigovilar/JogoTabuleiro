@@ -1,24 +1,46 @@
 package br.ufpb.aps.jogo.controle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.ufpb.aps.jogo.entidade.Personagem;
 
-public class GerentePersonagem { 
-	
-	private Personagem personagem;
-	
-	public void criarPersonagem(Personagem personagem){
-		this.personagem = personagem;
+public class GerentePersonagem {
+
+	private List<Personagem> listaPersonagens = new ArrayList<Personagem>();
+
+	private Personagem personagem = new Personagem();
+
+	public void adicionarPersonagem(Personagem personagem) {
+		listaPersonagens.add(personagem);
 	}
 
-	public Personagem getPersonagens() {
+	public List<Personagem> listarPersonagens() {
+		return listaPersonagens;
+	}
+
+	public int sizeListaPersonagem() {
+		return this.listaPersonagens.size();
+	}
+
+	public Personagem getPersonagem() {
 		return personagem;
 	}
 	
-	public String obterNome(){
-		return getPersonagens().getNome();
+
+	public String obterNome() {
+		return getPersonagem().getNome();
+	}
+
+	public void alterarNome(String nome) {
+		if (nome.length() > 2) {
+			getPersonagem().setNome(nome);
+		}
+
 	}
 	
-	public void alterarNome(String nome){
-		getPersonagens().setNome(nome);
+	public int getTamanhoNome() {
+		return obterNome().length();
+
 	}
 }

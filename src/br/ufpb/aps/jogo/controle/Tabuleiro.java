@@ -2,9 +2,10 @@ package br.ufpb.aps.jogo.controle;
 
 import br.ufpb.aps.jogo.entidade.Dado;
 import br.ufpb.aps.jogo.entidade.Questao;
+import br.ufpb.aps.jogo.entidade.Surpresa;
 import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
-public class Tabuleiro {
+public class Tabuleiro implements Surpresa{
 
 
 	private String tabuleiro[] = new String[] { null, null, null, null, null };
