@@ -1,48 +1,48 @@
 package br.ufpb.aps.jogo.entidade;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Personagem {
-	
-	private List<Personagem> listaPersonagens = new ArrayList<Personagem>();
-	// Esta lista não devia pertencer a classe personagem e sim ao gerente de personagem
 
+	private Posicao posicao;
 	private String nome;
 
-	
-	public String getNome(){
+	public Personagem() {
+
+		this.posicao = new Posicao();
+		this.posicao.setPosicaoX(0);
+		this.posicao.setPosicaoY(0);
+
+	}
+
+	public String getNome() {
 		return nome;
 	}
-	
-	public void setNome(String nome){
+
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public void criarPersonagem(Personagem p) {
-		this.listaPersonagens.add(p);
+	public int getPosicaoX() {
+
+		return this.posicao.getPosicaoX();
 
 	}
-	
-	public List<Personagem> listarPersonagens(){
-		return listaPersonagens;
-	}
-	
-	public int sizeListaPersonagem(){
-		return this.listaPersonagens.size();
+
+	public void setAvancarPosicaoX(int coordenada_X) {
+
+		this.posicao.setPosicaoX(getPosicaoX() + coordenada_X);
+
 	}
 
+	public int getPosicaoY() {
 
-	public void setResultado(String n){
-		this.nome=n;
+		return this.posicao.getPosicaoY();
+
 	}
 
-/*	public int getResultado() {
-		int i,res = -1;
-		for (i = 0;i<listaPersonagens.size();i++)
-		    if (listaPersonagens.get(i).getNome()==this.nome)  
-		         res =  listaPersonagens.get(i).getResultado();
-		return res;
-	}*/
-	
+	public void setAvancarPosicaoY(int coordenada_y) {
+
+		this.posicao.setPosicaoY(getPosicaoY() + coordenada_y);
+
+	}
+
 }
