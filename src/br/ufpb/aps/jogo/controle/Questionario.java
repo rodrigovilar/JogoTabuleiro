@@ -6,8 +6,8 @@ import java.util.List;
 import br.ufpb.aps.jogo.entidade.Questao;
 import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
-
 public class Questionario {
+	private Questao questao = new Questao();
 	private List<Questao> listaDeQuestoes = new LinkedList<Questao>();
 
 	public void cadastrarQuestao(Questao questao) {
@@ -15,13 +15,13 @@ public class Questionario {
 		this.listaDeQuestoes.add(questao);
 	}
 
-	public List<Questao> listarQuestoes() {
+	public List<Questao> mostrarQuestoes() {
 		return listaDeQuestoes;
 	}
 
 	public void removerQuestao(Questao questao) {
 		obterQuestao(questao.getPergunta());
-		this.listarQuestoes().remove(questao);
+		this.mostrarQuestoes().remove(questao);
 	}
 
 	public Questao obterQuestao(String pergunta) {
@@ -34,6 +34,7 @@ public class Questionario {
 		throw new ExcecaoJogoTabuleiro("Questao inexistente!");
 	}
 
+	// falta corrigir esse metodo
 	public Questao alterarQuestao(Questao questaoNova) {
 		for (Questao questaoAntiga : listaDeQuestoes) {
 			if (questaoAntiga.getPergunta().equals(questaoNova.getPergunta())) {
@@ -43,6 +44,14 @@ public class Questionario {
 			}
 		}
 		throw new ExcecaoJogoTabuleiro("Questao inexistente!");
+	}
+
+	public void criarQuestao(Questao questao) {
+		this.questao = questao;
+	}
+	
+	public Questao getQuestao(){
+		return questao;
 	}
 
 	public int sizeQuestionario() {
