@@ -71,7 +71,7 @@ public class Jogo {
 		return tabuleiro.getPosicaoPersonagemX();
 	}
 
-	public boolean personagemNoTabuleiro(){
+	public boolean verificarPersonagemNoTabuleiro(){
 		return tabuleiro.verificarPersonagemNoTabuleiro();
 	}
 
