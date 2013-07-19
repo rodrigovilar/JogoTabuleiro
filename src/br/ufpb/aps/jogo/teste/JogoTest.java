@@ -274,7 +274,7 @@ public class JogoTest {
 				fachada.getPosicaoPersonagem() == 2);
 	}
 
-	// teste 20 
+	// teste 20
 	@Test
 	public void verificaPosicaoAposSupresaRuim() {
 		escolhaDoPersonagemX();
@@ -545,17 +545,28 @@ public class JogoTest {
 		Questao questao = new Questao();
 		questao.setAlternativas(alternativas);
 	}
-	// teste 44
-		@Test
-		public void verificarPersonagemXNoTabuleiro() {
-			fachada.setEscolhaPersonagemX(true);
-			lancarDado();
-			Questao questao1 = questao();
-			criarQuestao(questao1);
-			escolhaDaResposta();
-			assertTrue(fachada.personagemNoTabuleiro());
-		}
 
+	// teste 44
+	@Test
+	public void verificarPersonagemXNoTabuleiro() {
+		fachada.setEscolhaPersonagemX(true);
+		lancarDado();
+		Questao questao1 = questao();
+		criarQuestao(questao1);
+		escolhaDaResposta();
+		assertTrue(fachada.personagemNoTabuleiro());
+	}
+
+	// test 45 
+	@Test
+	public void verificarPersonagemYNoTabuleiro() {
+		fachada.setEscolhaPersonagemX(false);
+		lancarDado();
+		Questao questao1 = questao();
+		criarQuestao(questao1);
+		escolhaDaResposta();
+		assertFalse(fachada.personagemNoTabuleiro());
+	}
 
 	// Metodo auxiliar de teste
 	public Questao questao() {
