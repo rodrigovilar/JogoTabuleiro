@@ -19,14 +19,9 @@ public class GerentePersonagem {
 		return listaPersonagens;
 	}
 
-	public int sizeListaPersonagem() {
-		return this.listaPersonagens.size();
-	}
-
 	public Personagem getPersonagem() {
 		return personagem;
 	}
-	
 
 	public String obterNome() {
 		return getPersonagem().getNome();
@@ -38,7 +33,6 @@ public class GerentePersonagem {
 		}
 
 	}
-	
 	public int getTamanhoNome() {
 		return obterNome().length();
 
