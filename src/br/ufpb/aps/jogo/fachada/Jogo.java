@@ -30,6 +30,10 @@ public class Jogo {
 		return gerenteJogador.listarJogadores();
 	}
 	
+	public void removerJogador(Jogador jogador){
+		gerenteJogador.removerJogador(jogador);
+	}
+	
 	public Questao criarQuestao(Questao questao) {
 		return tabuleiro.criarQuestao(questao);
 	}

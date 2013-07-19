@@ -36,17 +36,52 @@ public class JogoTest {
 		assertEquals("Espera-se que o jogador salvo seja igual ao jogador cadastrado",jogador,jogadorSalvo);	
 	}
 	// teste novo
-		@Test(expected= ExcecaoJogoTabuleiro.class)
-		public void cadastrarJogadorComMesmaSenha(){
-			Jogador jogador1 = new Jogador();
-			jogador1.setSenha("1a");
-			fachada.cadastrarJogador(jogador1);
+	@Test
+	public void removerJogador() {
+		Jogador jogador = new Jogador();
+		jogador.setNome("nome");
+		jogador.setSenha("senha");
+		fachada.cadastrarJogador(jogador);
+
+		List<Jogador> jogadoresSalvos = fachada.listarJogador();
+		Jogador jogadorSalvo = jogadoresSalvos.get(0);
+		assertEquals(jogador, jogadorSalvo);
+		fachada.removerJogador(jogador);
+		assertTrue(jogadoresSalvos.size() == 0);
+	}
+	// teste novo
+	@Test(expected= ExcecaoJogoTabuleiro.class)
+	public void cadastrarJogadorComMesmaSenha(){
+		Jogador jogador1 = new Jogador();
+		jogador1.setSenha("1a");
+		fachada.cadastrarJogador(jogador1);
 			
-			Jogador jogador2 = new Jogador();
-			jogador2.setSenha("1a");
-			fachada.cadastrarJogador(jogador2);
-			
+		Jogador jogador2 = new Jogador();
+		jogador2.setSenha("1a");
+		fachada.cadastrarJogador(jogador2);
+	}
+	// teste novo
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void removerJogadorNovamente() {
+		Jogador jogador = new Jogador();
+		jogador.setNome("nome");
+		jogador.setSenha("senha");
+		fachada.cadastrarJogador(jogador);
+
+		List<Jogador> jogadoresSalvos = fachada.listarJogador();
+		Jogador jogadorSalvo = jogadoresSalvos.get(0);
+		assertEquals(jogador, jogadorSalvo);
+		fachada.removerJogador(jogador);
+		fachada.removerJogador(jogador);
 		}
+		// teste novo
+	@Test(expected = ExcecaoJogoTabuleiro.class)
+	public void removerJogadorInexistentee() {
+		Jogador jogador = new Jogador();
+		jogador.setNome("nome");
+		jogador.setSenha("senha");
+		fachada.removerJogador(jogador);
+	}	
 	// teste 1
 	@Test
 	public void iniciarJogo() {
