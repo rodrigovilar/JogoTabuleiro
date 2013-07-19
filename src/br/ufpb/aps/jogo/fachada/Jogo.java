@@ -2,9 +2,11 @@ package br.ufpb.aps.jogo.fachada;
 
 import java.util.List;
 
+import br.ufpb.aps.jogo.controle.GerenteJogador;
 import br.ufpb.aps.jogo.controle.GerentePersonagem;
 import br.ufpb.aps.jogo.controle.Questionario;
 import br.ufpb.aps.jogo.controle.Tabuleiro;
+import br.ufpb.aps.jogo.entidade.Jogador;
 import br.ufpb.aps.jogo.entidade.Personagem;
 import br.ufpb.aps.jogo.entidade.Questao;
 
@@ -18,7 +20,16 @@ public class Jogo {
 	private Questionario questionario = new Questionario();
 	private GerentePersonagem gerentePersonagem = new GerentePersonagem();
 	private Tabuleiro tabuleiro = new Tabuleiro();
-
+	private GerenteJogador gerenteJogador = new GerenteJogador();
+	
+	public void cadastraJogador(Jogador jogador){
+		gerenteJogador.cadastrarJogador(jogador);
+	}
+	
+	public List<Jogador> listarJogador(){
+		return gerenteJogador.listarJogadores();
+	}
+	
 	public Questao criarQuestao(Questao questao) {
 		return tabuleiro.criarQuestao(questao);
 	}
@@ -71,7 +82,7 @@ public class Jogo {
 		return tabuleiro.getPosicaoPersonagemX();
 	}
 
-	public boolean verificarPersonagemNoTabuleiro(){
+	public boolean personagemNoTabuleiro(){
 		return tabuleiro.verificarPersonagemNoTabuleiro();
 	}
 
