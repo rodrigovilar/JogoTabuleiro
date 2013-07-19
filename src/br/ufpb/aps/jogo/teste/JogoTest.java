@@ -26,7 +26,7 @@ public class JogoTest {
 		Jogador jogador = new Jogador();
 		jogador.setNome("jogador_1");
 		jogador.setSenha("1a2b");
-		fachada.cadastraJogador(jogador);
+		fachada.cadastrarJogador(jogador);
 		
 		List<Jogador> jogadoresSalvos = fachada.listarJogador();
 		assertEquals("Espera-se que o tamanho da lista de jogadores seja 1",1,jogadoresSalvos.size());
@@ -35,6 +35,18 @@ public class JogoTest {
 		
 		assertEquals("Espera-se que o jogador salvo seja igual ao jogador cadastrado",jogador,jogadorSalvo);	
 	}
+	// teste novo
+		@Test(expected= ExcecaoJogoTabuleiro.class)
+		public void cadastrarJogadorComMesmaSenha(){
+			Jogador jogador1 = new Jogador();
+			jogador1.setSenha("1a");
+			fachada.cadastrarJogador(jogador1);
+			
+			Jogador jogador2 = new Jogador();
+			jogador2.setSenha("1a");
+			fachada.cadastrarJogador(jogador2);
+			
+		}
 	// teste 1
 	@Test
 	public void iniciarJogo() {

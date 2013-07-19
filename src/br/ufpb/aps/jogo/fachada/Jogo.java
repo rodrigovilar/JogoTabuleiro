@@ -22,7 +22,7 @@ public class Jogo {
 	private Tabuleiro tabuleiro = new Tabuleiro();
 	private GerenteJogador gerenteJogador = new GerenteJogador();
 	
-	public void cadastraJogador(Jogador jogador){
+	public void cadastrarJogador(Jogador jogador){
 		gerenteJogador.cadastrarJogador(jogador);
 	}
 	
