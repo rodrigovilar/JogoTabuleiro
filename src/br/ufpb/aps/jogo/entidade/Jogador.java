@@ -1,5 +1,7 @@
 package br.ufpb.aps.jogo.entidade;
 
+import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
+
 public class Jogador {
 
 	private String nome;
@@ -11,6 +13,9 @@ public class Jogador {
 	}
 
 	public void setNome(String nome) {
+		if (nome == null) {
+			throw new ExcecaoJogoTabuleiro("Não é permitido jogador sem nome!");
+		}
 		this.nome = nome;
 	}
 
@@ -19,6 +24,9 @@ public class Jogador {
 	}
 
 	public void setSenha(String senha) {
+		if (senha == null) {
+			throw new ExcecaoJogoTabuleiro("Não é permitido jogador sem senha!");
+		}
 		this.senha = senha;
 	}
 
