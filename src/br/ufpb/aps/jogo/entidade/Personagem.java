@@ -27,7 +27,7 @@ public class Personagem {
 
 	}
 
-	public void setAvancarPosicaoX(int coordenada_X) {
+	public void setPosicaoX(int coordenada_X) {
 
 		this.posicao.setPosicaoX(getPosicaoX() + coordenada_X);
 
@@ -39,7 +39,7 @@ public class Personagem {
 
 	}
 
-	public void setAvancarPosicaoY(int coordenada_y) {
+	public void setPosicaoY(int coordenada_y) {
 
 		this.posicao.setPosicaoY(getPosicaoY() + coordenada_y);
 
