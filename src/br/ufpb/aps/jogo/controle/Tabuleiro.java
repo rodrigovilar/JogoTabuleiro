@@ -7,7 +7,8 @@ import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 public class Tabuleiro implements Surpresa {
 
-	private String tabuleiro[] = new String[] { null, null, null, null, null };
+	private String tabuleiro[] = new String[] { null, null, null, null,
+			null };
 	private Dado dado = new Dado();
 	private Questionario questionario = new Questionario();
 	private GerentePersonagem gp = new GerentePersonagem();
@@ -35,7 +36,7 @@ public class Tabuleiro implements Surpresa {
 
 	public void setRespostaPersonagemX(String alternativa) {
 
-		if (!respostaValida(alternativa)) {
+		if (!alternativaValida(alternativa)) {
 			throw new ExcecaoJogoTabuleiro("Alternativa invalida!");
 		}
 		if (!isResponder()) {
@@ -57,7 +58,7 @@ public class Tabuleiro implements Surpresa {
 
 	public void setRespostaPersonagemY(String alternativa) {
 
-		if (!respostaValida(alternativa)) {
+		if (!alternativaValida(alternativa)) {
 			throw new ExcecaoJogoTabuleiro("Alternativa invalida!");
 		}
 		if (!isResponder()) {
@@ -113,7 +114,7 @@ public class Tabuleiro implements Surpresa {
 		setAvancarPersonagemX();
 		insereNaPosicao(getPosicaoPersonagemX(), escolha);
 
-		// mostrarTabuleiro();
+		 //mostrarTabuleiro();
 		proximaJogadaX = !proximaJogadaX;
 	}
 
@@ -123,7 +124,7 @@ public class Tabuleiro implements Surpresa {
 		removePosicao(getPosicaoPersonagemY());
 		setAvancarPersonagemY();
 		insereNaPosicao(getPosicaoPersonagemY(), escolha);
-		//mostrarTabuleiro();
+		// mostrarTabuleiro();
 		proximaJogadaX = !proximaJogadaX;
 	}
 
@@ -172,7 +173,7 @@ public class Tabuleiro implements Surpresa {
 			return;
 	}
 
-	public boolean respostaValida(String alternativa) {
+	public boolean alternativaValida(String alternativa) {
 		boolean result = false;
 		if ((alternativa.equals("a") || alternativa.equals("b"))
 				|| alternativa.equals("c")) {
@@ -193,9 +194,9 @@ public class Tabuleiro implements Surpresa {
 		return resultado;
 	}
 
-	// corrigir numero magigo
 	public boolean acabou() {
-		if (gp.getPersonagem().getPosicaoX() == 4) {
+		int size = tabuleiro.length;
+		if (gp.getPersonagem().getPosicaoX() == size - 1) {
 			return true;
 		}
 		return false;
@@ -232,13 +233,16 @@ public class Tabuleiro implements Surpresa {
 		return q;
 	}
 
-	public void mostrarTabuleiro() {
+	// metodo so para visualizacao do tabuleiro,ele nao ficara no projeto
+	/*public void mostrarTabuleiro() {
 		for (int i = 0; i < tabuleiro.length; i++) {
-			System.out.println(tabuleiro[i]);
+			for (int j = 0; j < tabuleiro.length; j++) {
+				System.out.println(tabuleiro[i][j]);
+			}
 
 		}
 		System.out.println();
-	}
+	}*/
 
 	public void insereNaPosicao(int posicao, String elemento) {
 		tabuleiro[posicao] = elemento;
@@ -248,5 +252,5 @@ public class Tabuleiro implements Surpresa {
 		tabuleiro[posicao] = null;
 
 	}
-
+	// [[0,0],[1,1],[2,2]]
 }

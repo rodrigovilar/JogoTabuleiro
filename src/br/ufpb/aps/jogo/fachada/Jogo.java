@@ -133,8 +133,8 @@ public class Jogo {
 		tabuleiro.surpresaRuim();
 	}
 
-	public boolean respostaValida(String alternativa) {
-		return tabuleiro.respostaValida(alternativa);
+	public boolean alternativaValida(String alternativa) {
+		return tabuleiro.alternativaValida(alternativa);
 	}
 
 	public void setNomeJogador(String nome) {
