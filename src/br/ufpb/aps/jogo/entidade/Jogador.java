@@ -35,6 +35,10 @@ public class Jogador {
 	}
 
 	public void setScore(int score) {
+		if (score < 0) {
+			throw new ExcecaoJogoTabuleiro("Valor irregular no score!");
+		}
+
 		this.score = score;
 	}
 

@@ -114,7 +114,7 @@ public class Jogo {
 	}
 
 	public int verificarScore() {
-		return tabuleiro.getScore();
+		return tabuleiro.valorDoScore();
 	}
 
 	public boolean isSurpresa() {
