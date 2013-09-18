@@ -13,7 +13,7 @@ public class Dado {
 	
 	private Random random;
 	private int valorDoDado;
-	private static final int FACES_DO_DADO = 2;// o numero de faces correto é 7
+	private static final int FACES_DO_DADO = 7;// o numero de faces correto é 7
 	
 	public Dado(){
 		this.random = new Random();
@@ -34,6 +34,10 @@ public class Dado {
 	
 	public int getValorDoDado(){
 		return valorDoDado;
+	}
+	
+	public void setValorDado(int valor){
+		this.valorDoDado = valor;
 	}
 	
 }
