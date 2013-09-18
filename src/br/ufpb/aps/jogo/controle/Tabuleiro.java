@@ -5,8 +5,7 @@ import br.ufpb.aps.jogo.entidade.Questao;
 import br.ufpb.aps.jogo.entidade.Surpresa;
 import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
-public class Tabuleiro implements Surpresa{
-
+public class Tabuleiro implements Surpresa {
 
 	private String tabuleiro[] = new String[] { null, null, null, null, null };
 	private Dado dado = new Dado();
@@ -34,39 +33,6 @@ public class Tabuleiro implements Surpresa{
 		return proximaJogadaX;
 	}
 
-	public boolean verificarPersonagemNoTabuleiro() {
-		String personagem = tabuleiro[posicaoNoTabuleiro()];
-
-		if (personagem == null) {
-			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
-		}
-		if (personagem == "X") {
-			return true;
-		}
-		return false;
-	}
-
-	private void moverPersonagemNoTabuleiro() {
-		String escolha = (proximaJogadaX) ? "X" : "Y";
-
-		setAvancarPersonagem();
-
-		this.tabuleiro[posicaoNoTabuleiro()] = escolha;
-		proximaJogadaX = !proximaJogadaX;
-	}
-
-	public void setAvancarPersonagem() {
-		gp.getPersonagem().setAvancarPosicaoX(dado.getValorDoDado());
-	}
-
-	public int posicaoNoTabuleiro() {
-		return gp.getPersonagem().getPosicaoX();
-	}
-
-	public String getRespostaPersonagemX() {
-		return respostaPersonagem;
-	}
-
 	public void setRespostaPersonagemX(String alternativa) {
 
 		if (!respostaValida(alternativa)) {
@@ -78,7 +44,7 @@ public class Tabuleiro implements Surpresa{
 		}
 		if (alternativa.equals(questionario.getQuestao().getGabarito())) {
 			resultado = true;
-			moverPersonagemNoTabuleiro();
+			moverPersonagemXNoTabuleiro();
 
 		} else {
 
@@ -88,7 +54,7 @@ public class Tabuleiro implements Surpresa{
 
 		this.respostaPersonagem = alternativa;
 	}
-	
+
 	public void setRespostaPersonagemY(String alternativa) {
 
 		if (!respostaValida(alternativa)) {
@@ -100,7 +66,7 @@ public class Tabuleiro implements Surpresa{
 		}
 		if (alternativa.equals(questionario.getQuestao().getGabarito())) {
 			resultado = true;
-			moverPersonagemNoTabuleiro();
+			moverPersonagemYNoTabuleiro();
 
 		} else {
 
@@ -110,11 +76,76 @@ public class Tabuleiro implements Surpresa{
 
 		this.respostaPersonagem = alternativa;
 	}
-	
-	
+
+	public int jogarDado() {
+
+		if (acabou()) {
+			throw new ExcecaoJogoTabuleiro("O jogo ja foi acabado!");
+		}
+
+		if (!personagemXDefinido) {
+			throw new ExcecaoJogoTabuleiro(" O Personagem nao foi definido!");
+		}
+
+		iniciouJogo = true;
+		return dado.lancarDado();
+
+	}
+
+	// falta corrigir esse metodo
+	public boolean verificarPersonagemNoTabuleiro() {
+		String personagem = tabuleiro[getPosicaoPersonagemX()];
+
+		if (personagem == null) {
+			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
+		}
+		if (personagem == "X") {
+			return true;
+		}
+		return false;
+
+	}
+
+	private void moverPersonagemXNoTabuleiro() {
+		String escolha = "X";
+
+		removePosicao(getPosicaoPersonagemX());
+		setAvancarPersonagemX();
+		insereNaPosicao(getPosicaoPersonagemX(), escolha);
+
+		// mostrarTabuleiro();
+		proximaJogadaX = !proximaJogadaX;
+	}
+
+	private void moverPersonagemYNoTabuleiro() {
+		String escolha = "Y";
+
+		removePosicao(getPosicaoPersonagemY());
+		setAvancarPersonagemY();
+		insereNaPosicao(getPosicaoPersonagemY(), escolha);
+		//mostrarTabuleiro();
+		proximaJogadaX = !proximaJogadaX;
+	}
+
+	private void setAvancarPersonagemX() {
+		gp.getPersonagem().setPosicaoX(dado.getValorDoDado());
+	}
+
+	private void setAvancarPersonagemY() {
+		gp.getPersonagem().setPosicaoY(dado.getValorDoDado());
+	}
 
 	public int getPosicaoPersonagemX() {
 		return gp.getPersonagem().getPosicaoX();
+	}
+
+	public int getPosicaoPersonagemY() {
+		return gp.getPersonagem().getPosicaoY();
+	}
+
+	// falta fazer para personagem Y
+	public String getRespostaPersonagemX() {
+		return respostaPersonagem;
 	}
 
 	public int getScore() {
@@ -162,24 +193,9 @@ public class Tabuleiro implements Surpresa{
 		return resultado;
 	}
 
-	public int jogarDado() {
-
-		if (acabou()) {
-			throw new ExcecaoJogoTabuleiro("O jogo ja foi acabado!");
-		}
-
-		if (!personagemXDefinido) {
-			throw new ExcecaoJogoTabuleiro(" O Personagem nao foi definido!");
-		}
-
-		iniciouJogo = true;
-		return dado.lancarDado();
-
-	}
-
 	// corrigir numero magigo
 	public boolean acabou() {
-		if (gp.getPersonagem().getPosicaoX() == 3) {
+		if (gp.getPersonagem().getPosicaoX() == 4) {
 			return true;
 		}
 		return false;
@@ -198,11 +214,11 @@ public class Tabuleiro implements Surpresa{
 	}
 
 	public void surpresaBoa() {
-		gp.getPersonagem().setAvancarPosicaoX(1);
+		gp.getPersonagem().setPosicaoX(1);
 	}
 
 	public void surpresaRuim() {
-		gp.getPersonagem().setAvancarPosicaoX(-1);
+		gp.getPersonagem().setPosicaoX(-1);
 	}
 
 	public Questao criarQuestao(Questao q) {
@@ -219,8 +235,18 @@ public class Tabuleiro implements Surpresa{
 	public void mostrarTabuleiro() {
 		for (int i = 0; i < tabuleiro.length; i++) {
 			System.out.println(tabuleiro[i]);
+
 		}
+		System.out.println();
+	}
+
+	public void insereNaPosicao(int posicao, String elemento) {
+		tabuleiro[posicao] = elemento;
+	}
+
+	public void removePosicao(int posicao) {
+		tabuleiro[posicao] = null;
 
 	}
-	
+
 }
