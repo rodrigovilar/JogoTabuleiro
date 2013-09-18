@@ -48,8 +48,8 @@ public class JogoTest {
 	// teste 4
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void definirPersonagemXAposInicio() {
-		fachada.setEscolhaPersonagemX(true);//
-		fachada.jogarDado();//
+		fachada.setEscolhaPersonagemX(true);
+		fachada.jogarDado();
 		fachada.setEscolhaPersonagemX(false);
 	}
 
@@ -85,7 +85,7 @@ public class JogoTest {
 	// teste 9
 	@Test
 	public void verificarRespostaPersonagemXCerta() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		assertTrue("Espera-se que o personagem acerte o desafio",
 				fachada.isResultadoQuestao());
@@ -94,7 +94,7 @@ public class JogoTest {
 	//teste 10
 	@Test
 	public void verificarRespostaPersonagemXErrada(){
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("b");
 		assertFalse("Espera-se que o personagem erre o desafio",
 				fachada.isResultadoQuestao());
@@ -103,7 +103,7 @@ public class JogoTest {
 	// teste 11
 	@Test
 	public void verificarPosicaoAposAcerto() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 
 		assertTrue("Espera-se que o personagem esteja na posicao 1",
@@ -113,7 +113,7 @@ public class JogoTest {
 	// teste 12
 	@Test
 	public void verificarPosicaoAposErro() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("b");
 		assertTrue("Espera-se que o personagem esteja na posicao 0",
 				fachada.getPosicaoPersonagem() == 0);
@@ -122,7 +122,7 @@ public class JogoTest {
 	// teste 13
 	@Test
 	public void verificarScoreAposAcerto() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		assertEquals(3, fachada.verificarScore());
 	}
@@ -130,7 +130,7 @@ public class JogoTest {
 	// teste 14
 	@Test
 	public void verificarScoreAposErro() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("b");
 		assertEquals(0, fachada.verificarScore());
 	}
@@ -138,7 +138,7 @@ public class JogoTest {
 	// teste 15
 	@Test
 	public void verificarScoreAposAcertoeAposErro() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 
 		fachada.jogarDado();
@@ -152,38 +152,35 @@ public class JogoTest {
 	// teste 16 falta corrigir esse metodo
 	@Test
 	public void vencedorPersonagemX() {
-		fachada.setEscolhaPersonagemX(true);//1
-		fachada.jogarDado();//2
-		Questao questao1 = questao();//3
-		fachada.criarQuestao(questao1);//4
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao2 = questao();
 		fachada.criarQuestao(questao2);
 		fachada.setRespostaPersonagemY("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao3 = questao();
 		fachada.criarQuestao(questao3);
 		fachada.setRespostaPersonagemX("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao4 = questao();
 		fachada.criarQuestao(questao4);
 		fachada.setRespostaPersonagemY("b");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao5 = questao();
 		fachada.criarQuestao(questao5);
 		fachada.setRespostaPersonagemX("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao6 = questao();
 		fachada.criarQuestao(questao6);
 		fachada.setRespostaPersonagemY("b");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao7 = questao();
 		fachada.criarQuestao(questao7);
 		fachada.setRespostaPersonagemX("a");
@@ -194,40 +191,40 @@ public class JogoTest {
 	// teste 17, falta corrigir esse metodo
 	@Test
 	public void vencedorPersonagemY() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("b");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao2 = questao();
 		fachada.criarQuestao(questao2);
 		fachada.setRespostaPersonagemY("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao3 = questao();
 		fachada.criarQuestao(questao3);
 		fachada.setRespostaPersonagemX("b");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao4 = questao();
 		fachada.criarQuestao(questao4);
 		fachada.setRespostaPersonagemY("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao5 = questao();
 		fachada.criarQuestao(questao5);
 		fachada.setRespostaPersonagemX("b");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao6 = questao();
 		fachada.criarQuestao(questao6);
 		fachada.setRespostaPersonagemY("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao7 = questao();
 		fachada.criarQuestao(questao7);
 		fachada.setRespostaPersonagemX("b");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao8 = questao();
 		fachada.criarQuestao(questao8);
 		fachada.setRespostaPersonagemY("a");
@@ -239,21 +236,21 @@ public class JogoTest {
 	// teste 18
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void lancarDadoAposJogoGanho() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao2 = questao();
 		fachada.criarQuestao(questao2);
 		fachada.setRespostaPersonagemX("a");
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao3 = questao();
 		fachada.criarQuestao(questao3);
 		fachada.setRespostaPersonagemX("a");
 		fachada.jogarDado();
 
-		fachada.jogarDado();
+		criarDado();
 		Questao questao4 = questao();
 		fachada.criarQuestao(questao4);
 		fachada.setRespostaPersonagemX("a");
@@ -265,7 +262,7 @@ public class JogoTest {
 	@Test
 	public void verificarCasaSurpresa() {
 
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		fachada.casaSurpresa();
 		assertTrue("Espera-se que casa contenha surpresa", fachada.isSurpresa());
@@ -274,7 +271,7 @@ public class JogoTest {
 	// teste 20 modificado
 	@Test
 	public void verificaPosicaoAposSupresaBoa() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		fachada.surpresaBoa();
 
@@ -285,7 +282,7 @@ public class JogoTest {
 	// teste 21 novo teste feito
 	@Test
 	public void verificaPosicaoAposSupresaRuim() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		fachada.surpresaRuim();
 		assertTrue("Espera-se que a posicao seja 0",
@@ -311,14 +308,14 @@ public class JogoTest {
 	// teste 24
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void escolherAlternativaInexistente() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("d");
 	}
 
 	// teste 25
 	@Test
 	public void alternativaValidaTest() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		assertEquals("Espera-se que a alternativa escolhida seja valida.",true,
 				fachada.alternativaValida(fachada.getRespostaPersonagemX()));
@@ -327,7 +324,7 @@ public class JogoTest {
 	// teste 26 
 	@Test(expected = ExcecaoJogoTabuleiro.class)
 	public void alternativaInvalidaTest() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("d");
 		assertEquals("Espera-se que a alternativa escolhida seja invalida.",false,
 				fachada.alternativaValida(fachada.getRespostaPersonagemX()));
@@ -336,7 +333,7 @@ public class JogoTest {
 	// teste 27
 	@Test
 	public void comparacaoDeAlternativa() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		assertEquals("Espera-se que a alternativa (a) seja a escolhida.","a", fachada.getRespostaPersonagemX());
 	}
@@ -352,7 +349,7 @@ public class JogoTest {
 	@Test
 	public void verificarPosicaoAposAcertoEAposErro() {
 
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 
 		fachada.jogarDado();
@@ -366,7 +363,7 @@ public class JogoTest {
 	// teste 30
 	@Test
 	public void verificarScoreSalvo() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 
 		Questao questao2 = questao();
@@ -394,7 +391,7 @@ public class JogoTest {
 	// teste 32
 	@Test
 	public void verificarJogoEncerradoAntesDoTempo() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		fachada.encerrarAntesDoTempo();
 		assertTrue("Espera que o jogo tenha terminado antes da hora",
@@ -404,7 +401,7 @@ public class JogoTest {
 	// teste 33
 	@Test
 	public void verificarScoreDePartidaCancelada() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		
 		Questao questao2 = questao();
@@ -529,7 +526,7 @@ public class JogoTest {
 	// teste 45 novo
 	@Test
 	public void verificarPersonagemXNoTabuleiro() {
-		metodoAuxiliar();
+		desafio();
 		fachada.setRespostaPersonagemX("a");
 		assertTrue(fachada.personagemNoTabuleiro());
 	}
@@ -642,11 +639,23 @@ public class JogoTest {
 		return questao;
 		
 	}
-	public void metodoAuxiliar(){
+	// Metodo auxiliar de teste
+	public Dado dado(){
+		Dado d = new Dado();
+		d.setValorDado(1);
+		return d;
+	}
+	// Metodo auxiliar de teste
+	public void desafio(){
 		fachada.setEscolhaPersonagemX(true);
-		fachada.jogarDado();
+		criarDado();
 		Questao questao1 = questao();
 		fachada.criarQuestao(questao1);
+	}
+	// Metodo auxiliar de teste
+	public void criarDado(){
+		Dado d = dado();
+		fachada.criarDado(d);
 	}
 	
 
