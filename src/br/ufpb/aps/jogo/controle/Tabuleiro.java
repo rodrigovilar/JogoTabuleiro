@@ -7,15 +7,14 @@ import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 public class Tabuleiro implements Surpresa {
 
-	private String tabuleiro[] = new String[] { null, null, null, null,
-			null };
+	private String tabuleiro[] = new String[] { null, null, null, null, null };
 	private Dado dado = new Dado();
 	private Questionario questionario = new Questionario();
 	private GerentePersonagem gp = new GerentePersonagem();
+	private GerenteJogador gj = new GerenteJogador();
 
 	private boolean contemSurpresa = false;
 	private String respostaPersonagem = "";
-	private int score;
 	private boolean responder = false;
 	private boolean resultado;
 	private boolean personagemXDefinido;
@@ -114,7 +113,7 @@ public class Tabuleiro implements Surpresa {
 		setAvancarPersonagemX();
 		insereNaPosicao(getPosicaoPersonagemX(), escolha);
 
-		 //mostrarTabuleiro();
+		// mostrarTabuleiro();
 		proximaJogadaX = !proximaJogadaX;
 	}
 
@@ -149,27 +148,18 @@ public class Tabuleiro implements Surpresa {
 		return respostaPersonagem;
 	}
 
-	public int getScore() {
-
-		return score;
+	public int valorDoScore(){
+		return gj.getJogador().getScore();
 	}
-
-	public void setScore(int score) {
-		if (score < 0) {
-			throw new ExcecaoJogoTabuleiro("Valor irregular no score!");
-		}
-		this.score = score;
-	}
-
-	// corrigir os numeros magicos
 	private void adicionarPontuacao(boolean resultado) {
+
 		if (resultado == true)
 
-			score += 3;
-		if (getScore() != 0 && resultado == false) {
-			score -= 1;
+			gj.getJogador().aumentarScore();
+		if (valorDoScore() != 0 && resultado == false) {
+			gj.getJogador().diminuirScore();
 		}
-		if (getScore() == 0 && resultado == false)
+		if (valorDoScore() == 0 && resultado == false)
 			return;
 	}
 
@@ -234,15 +224,13 @@ public class Tabuleiro implements Surpresa {
 	}
 
 	// metodo so para visualizacao do tabuleiro,ele nao ficara no projeto
-	/*public void mostrarTabuleiro() {
-		for (int i = 0; i < tabuleiro.length; i++) {
-			for (int j = 0; j < tabuleiro.length; j++) {
-				System.out.println(tabuleiro[i][j]);
-			}
-
-		}
-		System.out.println();
-	}*/
+	/*
+	 * public void mostrarTabuleiro() { for (int i = 0; i < tabuleiro.length;
+	 * i++) { for (int j = 0; j < tabuleiro.length; j++) {
+	 * System.out.println(tabuleiro[i][j]); }
+	 * 
+	 * } System.out.println(); }
+	 */
 
 	public void insereNaPosicao(int posicao, String elemento) {
 		tabuleiro[posicao] = elemento;
