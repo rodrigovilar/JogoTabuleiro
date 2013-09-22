@@ -158,16 +158,16 @@ public class JogoTest {
 		assertEquals(2, fachada.verificarScore());
 	}*/
 
-	// teste 16 falta corrigir esse metodo
+	// teste 16 
 	@Test
 	public void vencedorPersonagemX() {
 		criarDesafio();
-		fachada.setRespostaPersonagemX("a");
+		fachada.setRespostaPersonagemX("a"); // personagem X
 
 		criarDado();
 		Questao questao2 = criarQuestao();
 		fachada.criarQuestao(questao2);
-		fachada.setRespostaPersonagemY("b");
+		fachada.setRespostaPersonagemY("b"); // personagem Y
 
 		criarDado();
 		Questao questao3 = criarQuestao();
@@ -218,7 +218,7 @@ public class JogoTest {
 				fachada.acabou());
 	}
 
-	// teste 17, falta corrigir esse metodo
+	// teste 17
 
 	@Test
 	public void vencedorPersonagemY() {
@@ -339,7 +339,7 @@ public class JogoTest {
 				fachada.getPosicaoPersonagem() == 2);
 	}
 
-	// teste 21 novo teste feito
+	// teste 21 novo
 	@Test
 	public void verificaPosicaoAposSupresaRuim() {
 		criarDesafio();
@@ -408,7 +408,7 @@ public class JogoTest {
 		assertTrue(fachada.getValorDoDado() == 0);
 	}
 
-	// teste 29, acho que seria legal fazer outro metodo de test p/ Y
+	// teste 29, acho que seria legal fazer outro metodo de test p/  o Y tbm.
 	@Test
 	public void verificarPosicaoAposAcertoEAposErro() {
 
@@ -468,7 +468,7 @@ public class JogoTest {
 				fachada.encerrarAntesDoTempo() == true);
 	}
 
-	// teste 33, acho que poderiamos criar um metodo desse para cada personagem.
+	// teste 33, acho que poderiamos criar um metodo desse para o personagem Y.
 	@Test
 	public void verificarScoreDePartidaCancelada() {
 		criarDesafio();
@@ -600,7 +600,6 @@ public class JogoTest {
 
 	// teste 46 novo
 	@Test
-	// falta corrigir esse metodo
 	public void verificarPersonagemYNoTabuleiro() {
 		fachada.setEscolhaPersonagemX(false);
 		fachada.jogarDado();
@@ -699,7 +698,6 @@ public class JogoTest {
 		questao.setAlternativas(new String[] { "a", "b", "c" });
 		questao.setGabarito("a");
 		return questao;
-
 	}
 
 	// Metodo auxiliar de teste
