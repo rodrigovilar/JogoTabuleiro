@@ -2,7 +2,6 @@ package br.ufpb.aps.jogo.fachada;
 
 import java.util.List;
 
-import br.ufpb.aps.jogo.controle.Desafio;
 import br.ufpb.aps.jogo.controle.GerenteJogador;
 import br.ufpb.aps.jogo.controle.GerentePersonagem;
 import br.ufpb.aps.jogo.controle.Questionario;
@@ -23,28 +22,27 @@ public class Jogo {
 	private GerentePersonagem gerentePersonagem = new GerentePersonagem();
 	private Tabuleiro tabuleiro = new Tabuleiro();
 	private GerenteJogador gerenteJogador = new GerenteJogador();
-	private Desafio desafio = new Desafio();
-	
-	public void cadastrarJogador(Jogador jogador){
+
+	public void cadastrarJogador(Jogador jogador) {
 		gerenteJogador.cadastrarJogador(jogador);
 	}
-	
-	public List<Jogador> listarJogador(){
+
+	public List<Jogador> listarJogador() {
 		return gerenteJogador.listarJogadores();
 	}
-	
-	public void removerJogador(Jogador jogador){
+
+	public void removerJogador(Jogador jogador) {
 		gerenteJogador.removerJogador(jogador);
 	}
-	
+
 	public Questao criarQuestao(Questao questao) {
 		return tabuleiro.criarQuestao(questao);
 	}
-	
-	public void criarDado(Dado d){
+
+	public void criarDado(Dado d) {
 		tabuleiro.criarDado(d);
 	}
-	
+
 	public void cadastrarQuestao(Questao questao) {
 		questionario.cadastrarQuestao(questao);
 	}
@@ -70,10 +68,10 @@ public class Jogo {
 		return tabuleiro.getValorDoDado();
 	}
 
-	public void setValorDado(int valor){
+	/*public void setValorDado(int valor) {
 		tabuleiro.setValorDado(valor);
-	}
-	
+	}*/
+
 	public Personagem getPersonagem() {
 		return gerentePersonagem.getPersonagem();
 	}
@@ -97,8 +95,12 @@ public class Jogo {
 		return tabuleiro.getPosicaoPersonagemX();
 	}
 
-	public boolean personagemNoTabuleiro(){
-		return tabuleiro.verificarPersonagemNoTabuleiro();
+	public boolean verificarPersonagemXNoTabuleiro() {
+		return tabuleiro.verificarPersonagemXNoTabuleiro();
+	}
+
+	public boolean verificarPersonagemYNoTabuleiro() {
+		return tabuleiro.verificarPersonagemYNoTabuleiro();
 	}
 
 	public String getRespostaPersonagemX() {
@@ -115,7 +117,6 @@ public class Jogo {
 		tabuleiro.setRespostaPersonagemY(alternativa);
 	}
 
-	// esse metodo só acaba com personagem x, falta fazer para o Y.
 	public boolean acabou() {
 		return tabuleiro.acabou();
 	}

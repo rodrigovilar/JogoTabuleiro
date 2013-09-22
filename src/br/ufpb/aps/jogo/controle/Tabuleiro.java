@@ -7,29 +7,45 @@ import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 public class Tabuleiro implements Surpresa {
 
-	private String tabuleiro[] = new String[] { null, null, null, null, null };
+	private String tabuleiroX[] = new String[7];
+	private String tabuleiroY[] = new String[7];
+
 	private Dado dado = new Dado();
 	private GerentePersonagem gp = new GerentePersonagem();
 	private GerenteJogador gj = new GerenteJogador();
 	private Questionario questionario = new Questionario();
 
-	private boolean contemSurpresa = false;
-	private boolean proximaJogadaX;
-	private String respostaPersonagem = "";
-	private boolean responder = false;
+	private boolean contemSurpresa;
+	private String respostaPersonagem;
+	private boolean responder;
 	private boolean resultado;
-	private boolean personagemXDefinido;
-	private boolean iniciouJogo = false;
+	private boolean primeiroPersonagemDefinido;
+	private boolean iniciouJogo;
+	private boolean proximaJogadaX;
 
-	// falta corrigir esse metodo
-	public boolean verificarPersonagemNoTabuleiro() {
-		String personagem = tabuleiro[getPosicaoPersonagemX()];
+	public boolean verificarPersonagemXNoTabuleiro() {
+		String personagem = tabuleiroX[getPosicaoPersonagemX()];
 
 		if (personagem == null) {
 			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
 		}
 		if (personagem == "X") {
 			return true;
+
+		}
+		return false;
+
+	}
+
+	public boolean verificarPersonagemYNoTabuleiro() {
+		String personagem = tabuleiroY[getPosicaoPersonagemY()];
+
+		if (personagem == null) {
+			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
+		}
+		if (personagem == "Y") {
+			return true;
+
 		}
 		return false;
 
@@ -38,35 +54,33 @@ public class Tabuleiro implements Surpresa {
 	public void moverPersonagemXNoTabuleiro() {
 		String escolha = "X";
 
-		removePosicao(getPosicaoPersonagemX());
+		removerPersonagemXDaPosicao(getPosicaoPersonagemX());
 		setAvancarPersonagemX();
-		insereNaPosicao(getPosicaoPersonagemX(), escolha);
-		proximaJogadaX = !proximaJogadaX;
-	}
-
-	public void moverPersonagemYNoTabuleiro() {
-		String escolha = "Y";
-
-		removePosicao(getPosicaoPersonagemY());
-		setAvancarPersonagemY();
-		insereNaPosicao(getPosicaoPersonagemY(), escolha);
-		proximaJogadaX = !proximaJogadaX;
+		inserirPersonagemNaPosicao(getPosicaoPersonagemX(), escolha);
 	}
 
 	private void setAvancarPersonagemX() {
 		gp.getPersonagem().setPosicaoX(dado.getValorDoDado());
 	}
 
+	public void moverPersonagemYNoTabuleiro() {
+		String escolha = "Y";
+
+		removerPersonagemYDaPosicao(getPosicaoPersonagemY());
+		setAvancarPersonagemY();
+		inserirPersonagemNaPosicao(getPosicaoPersonagemY(), escolha);
+	}
+
 	private void setAvancarPersonagemY() {
 		gp.getPersonagem().setPosicaoY(dado.getValorDoDado());
 	}
 
-	public int getPosicaoPersonagemX() {
-		return gp.getPersonagem().getPosicaoX();
-	}
-
 	public int getPosicaoPersonagemY() {
 		return gp.getPersonagem().getPosicaoY();
+	}
+
+	public int getPosicaoPersonagemX() {
+		return gp.getPersonagem().getPosicaoX();
 	}
 
 	public void casaSurpresa() {
@@ -85,39 +99,59 @@ public class Tabuleiro implements Surpresa {
 		gp.getPersonagem().setPosicaoX(-1);
 	}
 
-	public void insereNaPosicao(int posicao, String elemento) {
-		tabuleiro[posicao] = elemento;
+	public void removerPersonagemXDaPosicao(int posicao) {
+		tabuleiroX[posicao] = null;
+
 	}
 
-	public void removePosicao(int posicao) {
-		tabuleiro[posicao] = null;
+	public void removerPersonagemYDaPosicao(int posicao) {
+		tabuleiroY[posicao] = null;
+
+	}
+
+	public void inserirPersonagemNaPosicao(int posicao, String personagem) {
+		if (personagem == "X") {
+			tabuleiroX[posicao] = personagem;
+		}
+		tabuleiroY[posicao] = personagem;
 
 	}
 
 	public boolean acabou() {
-		int size = tabuleiro.length;
-		if (gp.getPersonagem().getPosicaoX() == size - 1) {
-			return true;
+
+		boolean resultado = false;
+		int sizeX = tabuleiroX.length;
+		int sizeY = tabuleiroY.length;
+
+		if (gp.getPersonagem().getPosicaoX() == sizeX - 1) {
+			resultado = true;
 		}
-		return false;
+
+		if (gp.getPersonagem().getPosicaoY() == sizeY - 1) {
+			resultado = false;
+		}
+		return resultado;
 	}
 
-	// ---------------------------------------
+	// -------------------------------Colocar codigos abaixo na classe Desafio.
 
 	public void setEscolhaPersonagemX(boolean b) {
 		if (iniciouJogo) {
 			throw new ExcecaoJogoTabuleiro("O jogo ja foi iniciado!");
 		}
-		this.personagemXDefinido = true;
+		this.primeiroPersonagemDefinido = true;
 		proximaJogadaX = b;
 	}
 
-	
-	  public boolean isEscolhaPersonagemX() {
-		  return proximaJogadaX; }
-	 
+	public boolean isEscolhaPersonagemX() {
+		return proximaJogadaX;
+	}
 
 	public void setRespostaPersonagemX(String alternativa) {
+
+		if (proximaJogadaX == false) {
+			throw new ExcecaoJogoTabuleiro("Não é a vez do personagem X!");
+		}
 
 		if (!alternativaValida(alternativa)) {
 			throw new ExcecaoJogoTabuleiro("Alternativa invalida!");
@@ -137,10 +171,14 @@ public class Tabuleiro implements Surpresa {
 		adicionarPontuacao(resultado);
 
 		this.respostaPersonagem = alternativa;
+		proximaJogadaX = !proximaJogadaX;
 	}
 
 	public void setRespostaPersonagemY(String alternativa) {
 
+		if (proximaJogadaX == true) {
+			throw new ExcecaoJogoTabuleiro("Não é a vez do personagem Y!");
+		}
 		if (!alternativaValida(alternativa)) {
 			throw new ExcecaoJogoTabuleiro("Alternativa invalida!");
 		}
@@ -159,6 +197,7 @@ public class Tabuleiro implements Surpresa {
 		adicionarPontuacao(resultado);
 
 		this.respostaPersonagem = alternativa;
+		proximaJogadaX = !proximaJogadaX;
 	}
 
 	public int jogarDado() {
@@ -167,7 +206,7 @@ public class Tabuleiro implements Surpresa {
 			throw new ExcecaoJogoTabuleiro("O jogo ja foi acabado!");
 		}
 
-		if (!personagemXDefinido) {
+		if (!primeiroPersonagemDefinido) {
 			throw new ExcecaoJogoTabuleiro(" O Personagem nao foi definido!");
 		}
 
@@ -188,8 +227,8 @@ public class Tabuleiro implements Surpresa {
 	private void adicionarPontuacao(boolean resultado) {
 
 		if (resultado == true)
-
 			gj.getJogador().aumentarScore();
+
 		if (valorDoScore() != 0 && resultado == false) {
 			gj.getJogador().diminuirScore();
 		}
@@ -221,8 +260,8 @@ public class Tabuleiro implements Surpresa {
 	public int getValorDoDado() {
 		return dado.getValorDoDado();
 	}
-	
-	public void setValorDado(int valor){
+
+	public void setValorDado(int valor) {
 		dado.setValorDado(valor);
 	}
 
@@ -236,9 +275,9 @@ public class Tabuleiro implements Surpresa {
 		questionario.criarQuestao(q);
 		return q;
 	}
-	
-	public void criarDado(Dado d){
-		this.dado = d ;
+
+	public void criarDado(Dado d) {
+		this.dado = d;
 	}
 
 }
