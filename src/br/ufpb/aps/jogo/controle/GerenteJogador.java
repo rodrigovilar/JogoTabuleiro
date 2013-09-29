@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufpb.aps.jogo.entidade.Jogador;
-import br.ufpb.aps.jogo.entidade.Questao;
+//import br.ufpb.aps.jogo.entidade.Questao;
 import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
 public class GerenteJogador {
