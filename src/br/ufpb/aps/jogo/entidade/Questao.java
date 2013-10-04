@@ -1,9 +1,15 @@
 package br.ufpb.aps.jogo.entidade;
 
+import java.io.Serializable;
+
 import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
-public class Questao {
+public class Questao implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String pergunta;
 	private String[] alternativas;
 	private String gabarito;

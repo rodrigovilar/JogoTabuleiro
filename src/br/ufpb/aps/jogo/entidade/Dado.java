@@ -1,5 +1,6 @@
 package br.ufpb.aps.jogo.entidade;
 
+import java.io.Serializable;
 import java.util.Random;
 /**
  * 
@@ -9,8 +10,12 @@ import java.util.Random;
  * @author jonathas
  *
  */
-public class Dado {
+public class Dado implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Random random;
 	private int valorDoDado;
 	private static final int FACES_DO_DADO = 7;// o numero de faces correto é 7

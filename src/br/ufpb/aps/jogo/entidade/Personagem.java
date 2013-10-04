@@ -1,7 +1,13 @@
 package br.ufpb.aps.jogo.entidade;
 
-public class Personagem {
+import java.io.Serializable;
 
+public class Personagem implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Posicao posicao;
 	private String nome;
 
