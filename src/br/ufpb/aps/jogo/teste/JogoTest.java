@@ -120,8 +120,7 @@ public class JogoTest {
 		fachada.setRespostaPersonagemX("b");
 		assertEquals(0, fachada.verificarScore());
 	}
-	// teste 15, falta ajeitar esse metodo: O score está para os dois personagem
-	/*@Test
+	@Test
 	public void verificarScoreAposAcertoeAposErro() {
 		
 		fachada.setEscolhaPersonagemX(true);
@@ -141,7 +140,7 @@ public class JogoTest {
 		fachada.setRespostaPersonagemX("b");
 
 		assertEquals(2, fachada.verificarScore());
-	}*/
+	}
 	// teste 16 
 	@Test
 	public void vencedorPersonagemX() {
