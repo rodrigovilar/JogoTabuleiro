@@ -9,7 +9,7 @@ import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 public class GerenteJogador {
 
 	private List<Jogador> jogadores = new ArrayList<Jogador>();
-	/*private Jogador jogador = new Jogador();*/ //O problema do score está aqui
+	private Jogador jogador = new Jogador();//O problema do score está aqui
 	//Não deveria ter esse novo jogador aqui, cada jogador deve est
 	
 	public void cadastrarJogador(Jogador jogador){
@@ -53,6 +53,11 @@ public class GerenteJogador {
 		}
 	}
 	
+	
+	public void aumentarScore(int index) {
+		Jogador aux = this.jogadores.get(index);
+		aux.setScore(aux.getScore()+ 3);
+	}
 	
 	
 
