@@ -48,11 +48,12 @@ public class Jogador implements Serializable {
 		this.score = score;
 	}
 
+	//TODO excluir pois deveria estar no GerenteJogador
 	public void aumentarScore() {
-		score += 3;
-
+		score += 3; 
 	}
 
+	//TODO excluir pois deveria estar no GerenteJogador
 	public void diminuirScore() {
 		score -= 1;
 	}
