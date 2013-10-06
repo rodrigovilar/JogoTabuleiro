@@ -59,7 +59,10 @@ public class GerenteJogador {
 		aux.setScore(aux.getScore()+ 3);
 	}
 	
-	
+	public void diminuirScore(int index) {
+		Jogador aux = this.jogadores.get(index);
+		aux.setScore(aux.getScore()- 1);
+	}
 
 	
 	
