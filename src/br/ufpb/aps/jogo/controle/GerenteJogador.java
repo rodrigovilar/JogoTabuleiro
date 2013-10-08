@@ -9,9 +9,7 @@ import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 public class GerenteJogador {
 
 	private List<Jogador> jogadores = new ArrayList<Jogador>();
-	private Jogador jogador = new Jogador();// O problema do score está aqui
-
-	// Não deveria ter esse novo jogador aqui, cada jogador deve est
+	private Jogador jogador = new Jogador();
 
 	public void cadastrarJogador(Jogador jogador) {
 		equalsJogador(jogador.getSenha());
