@@ -91,10 +91,14 @@ public class Jogo {
 	}
 
 	// só trabalha com o personagem X
-	public int getPosicaoPersonagem() {
+	public int getPosicaoPersonagemX() {
 		return tabuleiro.getPosicaoPersonagemX();
 	}
+	public int getPosicaoPersonagemY(){
+		return tabuleiro.getPosicaoPersonagemY();
+	}
 
+	
 	public boolean verificarPersonagemXNoTabuleiro() {
 		return tabuleiro.verificarPersonagemXNoTabuleiro();
 	}

@@ -1,6 +1,7 @@
 package br.ufpb.aps.jogo.controle;
 
 import br.ufpb.aps.jogo.entidade.Dado;
+import br.ufpb.aps.jogo.entidade.Jogador;
 import br.ufpb.aps.jogo.entidade.Questao;
 import br.ufpb.aps.jogo.entidade.Surpresa;
 import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
@@ -22,118 +23,6 @@ public class Tabuleiro implements Surpresa {
 	private boolean primeiroPersonagemDefinido;
 	private boolean iniciouJogo;
 	private boolean proximaJogadaX;
-
-	public boolean verificarPersonagemXNoTabuleiro() {
-		String personagem = tabuleiroX[getPosicaoPersonagemX()];
-
-		if (personagem == null) {
-			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
-		}
-		if (personagem == "X") {
-			return true;
-
-		}
-		return false;
-
-	}
-
-	public boolean verificarPersonagemYNoTabuleiro() {
-		String personagem = tabuleiroY[getPosicaoPersonagemY()];
-
-		if (personagem == null) {
-			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
-		}
-		if (personagem == "Y") {
-			return true;
-
-		}
-		return false;
-
-	}
-
-	public void moverPersonagemXNoTabuleiro() {
-		String escolha = "X";
-
-		removerPersonagemXDaPosicao(getPosicaoPersonagemX());
-		setAvancarPersonagemX();
-		inserirPersonagemNaPosicao(getPosicaoPersonagemX(), escolha);
-	}
-
-	private void setAvancarPersonagemX() {
-		gp.getPersonagem().setPosicaoX(dado.getValorDoDado());
-	}
-
-	public void moverPersonagemYNoTabuleiro() {
-		String escolha = "Y";
-
-		removerPersonagemYDaPosicao(getPosicaoPersonagemY());
-		setAvancarPersonagemY();
-		inserirPersonagemNaPosicao(getPosicaoPersonagemY(), escolha);
-	}
-
-	private void setAvancarPersonagemY() {
-		gp.getPersonagem().setPosicaoY(dado.getValorDoDado());
-	}
-
-	public int getPosicaoPersonagemY() {
-		return gp.getPersonagem().getPosicaoY();
-	}
-
-	public int getPosicaoPersonagemX() {
-		return gp.getPersonagem().getPosicaoX();
-	}
-
-	public void casaSurpresa() {
-		contemSurpresa = true;
-	}
-
-	public boolean isSurpresa() {
-		return contemSurpresa;
-	}
-
-	public void surpresaBoa() {
-		gp.getPersonagem().setPosicaoX(1);
-	}
-
-	public void surpresaRuim() {
-		gp.getPersonagem().setPosicaoX(-1);
-	}
-
-	public void removerPersonagemXDaPosicao(int posicao) {
-		tabuleiroX[posicao] = null;
-
-	}
-
-	public void removerPersonagemYDaPosicao(int posicao) {
-		tabuleiroY[posicao] = null;
-
-	}
-
-	public void inserirPersonagemNaPosicao(int posicao, String personagem) {
-		if (personagem == "X") {
-			tabuleiroX[posicao] = personagem;
-		}
-		tabuleiroY[posicao] = personagem;
-
-	}
-
-	public boolean acabou() {
-
-		boolean resultado = false;
-		int sizeX = tabuleiroX.length;
-		int sizeY = tabuleiroY.length;
-
-		if (gp.getPersonagem().getPosicaoX() == sizeX - 1) {
-			resultado = true;
-		}
-
-		if (gp.getPersonagem().getPosicaoY() == sizeY - 1) {
-			resultado = false;
-		}
-		return resultado;
-	}
-
-	// -------------------------------Colocar codigos abaixo na classe Desafio.
 
 	public void setEscolhaPersonagemX(boolean b) {
 		if (iniciouJogo) {
@@ -263,6 +152,116 @@ public class Tabuleiro implements Surpresa {
 
 	public void setValorDado(int valor) {
 		dado.setValorDado(valor);
+	}
+
+	public boolean verificarPersonagemXNoTabuleiro() {
+		String personagem = tabuleiroX[getPosicaoPersonagemX()];
+
+		if (personagem == null) {
+			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
+		}
+		if (personagem == "X") {
+			return true;
+
+		}
+		return false;
+
+	}
+
+	public boolean verificarPersonagemYNoTabuleiro() {
+		String personagem = tabuleiroY[getPosicaoPersonagemY()];
+
+		if (personagem == null) {
+			throw new ExcecaoJogoTabuleiro("Personagem nulo!");
+		}
+		if (personagem == "Y") {
+			return true;
+
+		}
+		return false;
+
+	}
+
+	public void moverPersonagemXNoTabuleiro() {
+		String escolha = "X";
+
+		removerPersonagemXDaPosicao(getPosicaoPersonagemX());
+		setAvancarPersonagemX();
+		inserirPersonagemNaPosicao(getPosicaoPersonagemX(), escolha);
+	}
+
+	private void setAvancarPersonagemX() {
+		gp.getPersonagem().setPosicaoX(dado.getValorDoDado());
+	}
+
+	public void moverPersonagemYNoTabuleiro() {
+		String escolha = "Y";
+
+		removerPersonagemYDaPosicao(getPosicaoPersonagemY());
+		setAvancarPersonagemY();
+		inserirPersonagemNaPosicao(getPosicaoPersonagemY(), escolha);
+	}
+
+	private void setAvancarPersonagemY() {
+		gp.getPersonagem().setPosicaoY(dado.getValorDoDado());
+	}
+
+	public int getPosicaoPersonagemY() {
+		return gp.getPersonagem().getPosicaoY();
+	}
+
+	public int getPosicaoPersonagemX() {
+		return gp.getPersonagem().getPosicaoX();
+	}
+
+	public void casaSurpresa() {
+		contemSurpresa = true;
+	}
+
+	public boolean isSurpresa() {
+		return contemSurpresa;
+	}
+
+	public void surpresaBoa() {
+		gp.getPersonagem().setPosicaoX(1);
+	}
+
+	public void surpresaRuim() {
+		gp.getPersonagem().setPosicaoX(-1);
+	}
+
+	public void removerPersonagemXDaPosicao(int posicao) {
+		tabuleiroX[posicao] = null;
+
+	}
+
+	public void removerPersonagemYDaPosicao(int posicao) {
+		tabuleiroY[posicao] = null;
+
+	}
+
+	public void inserirPersonagemNaPosicao(int posicao, String personagem) {
+		if (personagem == "X") {
+			tabuleiroX[posicao] = personagem;
+		}
+		tabuleiroY[posicao] = personagem;
+
+	}
+
+	public boolean acabou() {
+
+		boolean resultado = false;
+		int sizeX = tabuleiroX.length;
+		int sizeY = tabuleiroY.length;
+
+		if (gp.getPersonagem().getPosicaoX() == sizeX - 1) {
+			resultado = true;
+		}
+
+		if (gp.getPersonagem().getPosicaoY() == sizeY - 1) {
+			resultado = false;
+		}
+		return resultado;
 	}
 
 	public Questao criarQuestao(Questao q) {
