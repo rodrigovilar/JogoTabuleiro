@@ -24,7 +24,4 @@ public class Serializador {
 		d.close();
 		return o;
 	}
-	
-	// Lembrando que tem que implementar o Serializable nas classes bases do programa.
-
 }
