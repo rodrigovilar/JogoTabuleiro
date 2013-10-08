@@ -9,7 +9,7 @@ public class Serializador {
 
 	public Serializador() {
 	}
-
+	// A ideia e informar o caminho para onde guardar e o objeto
 	public void serializar(String path, Object obj) throws Exception {
 		FileOutputStream outFile = new FileOutputStream(path);
 		ObjectOutputStream s = new ObjectOutputStream(outFile);
@@ -17,6 +17,7 @@ public class Serializador {
 		s.close();
 	}
 
+	// Passar o caminho ate onde se localiza o arquivo salvo
 	public Object deserializar(String path) throws Exception {
 		FileInputStream inFile = new FileInputStream(path);
 		ObjectInputStream d = new ObjectInputStream(inFile);
