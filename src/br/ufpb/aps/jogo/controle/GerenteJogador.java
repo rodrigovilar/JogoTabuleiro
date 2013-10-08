@@ -15,6 +15,9 @@ public class GerenteJogador {
 		equalsJogador(jogador.getSenha());
 		jogadores.add(jogador);
 	}
+	public boolean efetuarLogin(Jogador jogado){
+		return obterJogador(jogador.getSenha());
+	}
 	public List<Jogador> listarJogadores() {
 		return jogadores;
 	}
@@ -22,10 +25,10 @@ public class GerenteJogador {
 		obterJogador(jogador.getSenha());
 		jogadores.remove(jogador);
 	}
-	public Jogador obterJogador(String senha) {
+	public boolean obterJogador(String senha) {
 		for (Jogador j : jogadores) {
 			if (j.getSenha().equals(senha)) {
-				return j;
+				return true;
 			}
 		}
 		throw new ExcecaoJogoTabuleiro("Jogador inexistente!");
