@@ -6,7 +6,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class Serializador {
-
 	public Serializador() {
 	}
 	// A ideia e informar o caminho para onde guardar e o objeto
@@ -16,7 +15,6 @@ public class Serializador {
 		s.writeObject(obj);
 		s.close();
 	}
-
 	// Passar o caminho ate onde se localiza o arquivo salvo
 	public Object deserializar(String path) throws Exception {
 		FileInputStream inFile = new FileInputStream(path);
