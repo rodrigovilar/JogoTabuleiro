@@ -6,6 +6,7 @@ import br.ufpb.aps.jogo.entidade.Questao;
 import br.ufpb.aps.jogo.entidade.Surpresa;
 import br.ufpb.aps.jogo.excecoes.ExcecaoJogoTabuleiro;
 
+@SuppressWarnings("unused")
 public class Tabuleiro implements Surpresa {
 
 	private String tabuleiroX[] = new String[7];
