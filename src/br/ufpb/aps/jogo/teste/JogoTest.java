@@ -193,23 +193,6 @@ public class JogoTest {
 		fachada.setRespostaPersonagemY("b");
 		assertEquals(0, fachada.verificarScore());
 	}
-	// teste 15 não passa
-	/*
-	 * @Test public void verificarScoreAposAcertoeAposErro() {
-	 * 
-	 * 
-	 * fachada.setEscolhaPersonagemX(true); criarDado(); Questao questao1 =
-	 * criarQuestao(); fachada.criarQuestao(questao1);
-	 * fachada.setRespostaPersonagemX("a");
-	 * 
-	 * fachada.jogarDado(); Questao questao2 = criarQuestao();
-	 * fachada.criarQuestao(questao2); fachada.setRespostaPersonagemY("b");
-	 * 
-	 * fachada.jogarDado(); Questao questao3 = criarQuestao();
-	 * fachada.criarQuestao(questao3); fachada.setRespostaPersonagemX("b");
-	 * 
-	 * assertEquals(2, fachada.verificarScore()); }
-	 */
 	// teste 23
 	@Test
 	public void vencedorPersonagemX() {
